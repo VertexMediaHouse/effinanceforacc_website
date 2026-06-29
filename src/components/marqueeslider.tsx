@@ -19,7 +19,7 @@ const Star = () => (
   >
     <path
       d="M38.5256 32.4787L30.7455 23.743L41 18.2387L29.5113 16.623L33.8793 5.71875L24.0604 11.9787L20.497 0.773438L16.9396 11.9787L7.1207 5.71875L11.4827 16.623L0 18.2387L10.2485 23.743L2.4744 32.4787L13.8058 30.003L13.3763 41.7734L20.497 32.4787L27.6177 41.7734L27.1881 30.003L38.5256 32.4787Z"
-      fill="#00473B"
+      fill="#cd753a"
     />
   </svg>
 );
@@ -41,7 +41,7 @@ function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (v
             <span
               className="block text-[clamp(60px,7vw,96px)] font-black uppercase leading-none text-transparent"
               style={{
-                WebkitTextStroke: "1px #041B16",
+                WebkitTextStroke: "1px #cd753a",
               }}
             >
               {item}
@@ -49,7 +49,7 @@ function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (v
 
             {/* Fill */}
             <span
-              className="absolute inset-0 overflow-hidden whitespace-nowrap text-[clamp(60px,7vw,96px)] font-black uppercase leading-none text-[#041B16]"
+              className="absolute inset-0 overflow-hidden whitespace-nowrap text-[clamp(60px,7vw,96px)] font-black uppercase leading-none text-[#cd753a]"
               style={{
                 clipPath:
                   hovered === item

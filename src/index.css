@@ -6,8 +6,22 @@
   @tailwind utilities;
 
   @layer base {
+    :root {
+      --color-bg: #FFFFFF;
+      --color-surface: #FDF8F4;
+      --color-surface-alt: #F8F7FF;
+      --color-text-primary: #1a1630;
+      --color-text-secondary: #6b6480;
+      --color-brand: #cd753a;
+      --color-brand-dark: #b8662f;
+      --color-deep: #392f83;
+      --color-rose: #885b67;
+      --color-border: #f0e6dd;
+      --color-border-cool: #e8e5f4;
+    }
+
     body {
-      @apply min-h-screen flex flex-col text-primary-text bg-hero-gradient;
+      @apply min-h-screen flex flex-col text-[#1a1630] bg-[#FFFFFF];
     }
   }
 

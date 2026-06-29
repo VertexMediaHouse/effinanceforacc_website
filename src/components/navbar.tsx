@@ -1,115 +1,62 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { PhoneCall, ArrowRight, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Industries", to: "/industries" },
-];
-
-export default function Navbar() {
-  const { pathname } = useLocation();
-  const [mobileOpen, setMobileOpen] = useState(false);
+const Navbar = () => {
 
   return (
-    <div className="w-full fixed top-0 left-0 z-50 mt-6 px-6 lg:px-12 pointer-events-none transition-all duration-300">
-      <nav className="max-w-[1400px] mx-auto bg-[#006a52] rounded-full px-8 py-4 shadow-lg pointer-events-auto">
-        <div className="flex items-center justify-between">
-          
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-white">
-            <div className="w-8 h-8 bg-white rounded-full flex justify-center items-center">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M4 12C4 12 7 8 12 8C17 8 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
-                <path d="M4 12C4 12 7 16 12 16C17 16 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <span>Finwave</span>
+    <header className="w-full font-sans sticky top-0 z-50 bg-white shadow-[0_1px_0_var(--color-border)]">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-16 px-6">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-2 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded">
+          <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold text-xl relative overflow-hidden">
+            <div className="absolute w-6 h-6 border-[3px] border-transparent border-t-white border-l-white rounded-full -top-1 -left-1 opacity-80"></div>
+            <div className="absolute w-8 h-8 border-[3px] border-transparent border-b-white border-r-white rounded-full -bottom-1 -right-1 opacity-40"></div>
+            <span className="italic relative z-10 drop-shadow-md">F</span>
+          </div>
+          <span className="text-3xl font-extrabold text-brand tracking-tight">Finwave</span>
+        </Link>
+
+        {/* Links */}
+        <nav className="hidden xl:flex items-center space-x-8 font-semibold text-[15px]">
+          <Link to="/" className="text-text-primary flex items-center hover:text-brand transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Home <ChevronDown size={16} className="ml-1 opacity-70" />
           </Link>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-white/90">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`transition-colors flex items-center gap-1 ${
-                  pathname === link.to
-                    ? "text-white"
-                    : "hover:text-white/80"
-                }`}
-              >
-                {link.label}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m6 9 6 6 6-6"/>
-                </svg>
-              </Link>
-            ))}
+          <Link to="/services" className="text-text-primary flex items-center hover:text-brand transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Service <ChevronDown size={16} className="ml-1 opacity-70" />
+          </Link>
+          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Pages <ChevronDown size={16} className="ml-1 opacity-70" />
           </div>
-
-          {/* Desktop Right */}
-          <div className="hidden lg:flex items-center gap-6">
-            <button aria-label="Search" className="text-white hover:text-white/80 transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </button>
-            <Link
-              to="/contact"
-              className="bg-white text-[#006a52] px-6 py-2.5 rounded-full font-semibold text-[15px] flex items-center gap-2 transition-transform hover:scale-105"
-            >
-              Lets Talk
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </Link>
+          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Elements <ChevronDown size={16} className="ml-1 opacity-70" />
           </div>
+          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Blog <ChevronDown size={16} className="ml-1 opacity-70" />
+          </div>
+          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
+            Contact
+          </div>
+        </nav>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-                <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-                <path d="M3 12h18M3 6h18M3 18h18" strokeLinecap="round" />
-              </svg>
-            )}
-          </button>
+        {/* Right Section */}
+        <div className="hidden lg:flex items-center space-x-8">
+          <div className="flex items-center space-x-3">
+            <div className="text-brand bg-surface p-2 rounded-full">
+              <PhoneCall size={24} />
+            </div>
+            <div>
+              <p className="text-sm text-text-secondary font-medium">Call:</p>
+              <p className="text-[17px] font-bold text-text-primary leading-none tracking-tight">+123-7787-8989</p>
+            </div>
+          </div>
+          <Link to="#" className="bg-brand text-white px-7 py-3.5 rounded font-bold flex items-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brand hover:bg-[#b8662f] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand">
+            Free Consultation <ArrowRight size={20} className="ml-2" />
+          </Link>
         </div>
+      </div>
+    </header>
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="lg:hidden mt-4 pt-4 border-t border-white/20 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={`text-[15px] font-medium py-2 transition-colors ${
-                  pathname === link.to ? "text-white" : "text-white/80 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 bg-white text-[#006a52] px-6 py-3 rounded-full text-[15px] font-semibold text-center hover:bg-gray-100 transition-colors"
-            >
-              Lets Talk
-            </Link>
-          </div>
-        )}
-      </nav>
-    </div>
   );
-}
+};
+
+export default Navbar;

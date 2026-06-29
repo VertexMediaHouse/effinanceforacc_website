@@ -5,6 +5,7 @@ import {
   Wallet,
   Landmark,
   Lock,
+  ArrowRight,
 } from "lucide-react";
 
 const features = [
@@ -44,7 +45,7 @@ function CornerShape() {
   return (
     <svg
       viewBox="0 0 150 80"
-      className="h-full w-full text-[#C7D9D5] transition-all duration-500 group-hover:text-[#F6B318]"
+      className="h-full w-full text-[#e0dceb] transition-all duration-500 group-hover:text-[#cd753a]"
       fill="none"
     >
       <path
@@ -60,54 +61,54 @@ function CornerShape() {
 
 export default function AboutServices() {
   return (
-    <section className="bg-white px-6 py-24">
-      <div className="mx-auto max-w-7xl">
-        {/* HEADER */}
-        <div className="mb-16 text-center">
-          <span className="text-[12px] font-semibold uppercase tracking-[4px] text-[#006d5b]">
-            Features
-          </span>
-
-          <h2 className="mt-4 text-[42px] font-bold leading-[1.1] text-[#041B16]">
-            We Automate Finances
-          </h2>
+    <section className="bg-surface py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Section Header */}
+        <div className="mb-16 flex flex-col items-center justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <span className="mb-4 block text-[12px] font-bold uppercase tracking-[3px] text-tertiary">
+              FEATURES
+            </span>
+            <h2 className="text-4xl font-bold leading-tight text-text-primary md:text-[52px] md:leading-[1.1]">
+              We Automate Finances
+              <br />
+              With Finwave
+            </h2>
+          </div>
+          <button className="group flex items-center gap-2 rounded-md bg-transparent px-6 py-3 font-semibold text-text-primary transition-all hover:text-brand">
+            View All Services
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
 
         {/* GRID */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((item) => {
-            const Icon = item.icon;
-
+          {features.map((item, index) => {
             return (
               <div
                 key={item.title}
-                className="group relative h-[250px] overflow-hidden rounded-[16px] bg-[#EDF5F4] p-5 transition-all duration-500 hover:-translate-y-2 hover:bg-[#00473B] hover:shadow-[0_25px_55px_rgba(0,71,59,.15)]"
+                className="group relative h-[250px] overflow-hidden rounded-[16px] bg-[#f4f0f8] p-5 transition-all duration-500 hover:-translate-y-2 hover:bg-[#cd753a] hover:shadow-[0_25px_55px_rgba(57,47,131,.15)]"
               >
                 {/* CONTENT */}
                 <div className="relative z-10">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white transition-all duration-300 group-hover:bg-[#F6B318]">
-                      <Icon
-                        size={22}
-                        strokeWidth={2.2}
-                        className="text-[#00473B]"
-                      />
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-brand font-semibold group-hover:bg-brand group-hover:text-white transition-colors duration-300">
+                      {String(index + 1).padStart(2, "0")}
                     </div>
-
-                    <h3 className="text-[20px] font-bold leading-tight text-[#041B16] transition-colors duration-300 group-hover:text-white">
+                    <h3 className="text-lg font-bold text-[#2a2456] group-hover:text-white transition-colors duration-300">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-[14px] leading-6 text-[#667878] transition-colors duration-300 group-hover:text-white/80">
+                  <p className="text-[14px] leading-6 text-[#5e5675] transition-colors duration-300 group-hover:text-white/80">
                     {item.desc}
                   </p>
 
                   <div className="mt-6">
-                    <button className="inline-flex items-center gap-3 text-sm font-semibold text-[#00473B] transition-all duration-300 group-hover:text-white">
+                    <button className="inline-flex items-center gap-3 text-sm font-semibold text-[#cd753a] transition-all duration-300 group-hover:text-white">
                       Learn More
 
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-all duration-300 group-hover:border-[#F6B318] group-hover:bg-[#F6B318] group-hover:text-[#041B16]">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-all duration-300 group-hover:border-[#cd753a] group-hover:bg-[#cd753a] group-hover:text-white">
                         →
                       </span>
                     </button>

@@ -10,17 +10,19 @@ export default {
         sans: ['Outfit', 'sans-serif'],
       },
       colors: {
-        primary: {
-          text: '#1a1a1a',
-        },
-        secondary: {
-          text: '#555555',
-        },
-        btn: {
-          dark: '#121212',
-          light: '#f7f7f7',
-        },
-        accent: '#e5f0e6',
+        brand: 'var(--color-brand)',
+        accent: 'var(--color-accent)',
+        tertiary: 'var(--color-tertiary)',
+        surface: 'var(--color-surface)',
+        'surface-alt': 'var(--color-surface-alt)',
+        'text-primary': 'var(--color-text-primary)',
+        'text-secondary': 'var(--color-text-secondary)',
+        border: 'var(--color-border)',
+        'border-warm': 'var(--color-border-warm)',
+      },
+      boxShadow: {
+        'brand': '0 4px 24px rgba(57,47,131,0.08)',
+        'brand-lg': '0 8px 32px rgba(57,47,131,0.12)',
       },
       backgroundImage: {
         'hero-gradient': 'radial-gradient(circle at 10% 30%, #faecd7 0%, transparent 50%), radial-gradient(circle at 90% 80%, #f0f7f2 0%, transparent 50%), #fcfbfa',

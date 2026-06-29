@@ -40,22 +40,22 @@ export default function whychooseus() {
   ];
 
   return (
-    <section className="overflow-hidden bg-[#EDF5F4] py-24">
+    <section className="overflow-hidden bg-white py-24">
       <div className="mx-auto max-w-[1400px] px-6">
         {/* Header */}
         <div className="mb-14 grid gap-10 lg:grid-cols-[480px_1fr]">
           <div>
-            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#2F8F83]">
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
               Discover Our Services
             </span>
 
-            <h2 className="max-w-[500px] text-[52px] font-bold leading-[1.05] text-[#183534]">
+            <h2 className="max-w-[500px] text-[52px] font-bold leading-[1.05] text-[#1a1630]">
               We Provide Financial Solutions To Grow Business
             </h2>
           </div>
 
           <div className="flex items-start lg:justify-end">
-            <p className="max-w-[600px] text-[14px] leading-7 text-[#6E7676]">
+            <p className="max-w-[600px] text-[14px] leading-7 text-[#6b6480]">
               Discover a moving experience like no other at Outgrid. We go
               beyond merely transporting items and spreadsheets and get an
               accurate view. Discover a moving experience at Outgrid. We go
@@ -81,28 +81,31 @@ export default function whychooseus() {
                   key={index}
                   className="!w-[360px] lg:!w-[380px]"
                 >
-                  <div className="group flex h-[330px] flex-col rounded-2xl bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <div className="group flex h-[330px] flex-col rounded-2xl bg-[#F8F7FF] p-8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(57,47,131,0.08)] border border-transparent hover:border-l-4 hover:border-l-[#cd753a]">
                     {/* Icon */}
-                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-[#EDF5F4]">
+                    <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-xl bg-white border border-[#e8e5f4]">
                       <Icon
                         size={24}
-                        className="text-[#2F8F83]"
+                        className="text-[#392f83]"
                       />
                     </div>
 
                     {/* Title */}
-                    <h3 className="mb-4 text-[22px] font-bold leading-7 text-[#183534]">
+                    <h3 className="mb-4 text-[22px] font-bold leading-7 text-[#1a1630]">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mb-8 text-[14px] leading-7 text-[#6E7676]">
+                    <p className="mb-8 text-[14px] leading-7 text-[#6b6480]">
                       {service.description}
                     </p>
 
-                    {/* Arrow */}
-                    <div className="mt-auto">
-                      <button className="flex h-10 w-10 items-center justify-center rounded border border-[#DCE6E3] transition-all duration-300 group-hover:border-[#2F8F83] group-hover:bg-[#2F8F83] group-hover:text-white">
+                    {/* Arrow / Counter */}
+                    <div className="mt-auto flex justify-between items-end">
+                      <span className="text-[#392f83] font-bold text-2xl opacity-20 group-hover:opacity-100 transition-opacity">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <button className="flex h-10 w-10 items-center justify-center rounded border border-[#e8e5f4] transition-all duration-200 group-hover:border-[#392f83] group-hover:bg-[#392f83] group-hover:text-white text-[#1a1630]">
                         <ArrowRight size={16} />
                       </button>
                     </div>

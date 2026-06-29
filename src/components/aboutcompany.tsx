@@ -27,7 +27,7 @@ export default function AboutCompany() {
   ];
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-bg py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-[500px_1fr]">
           {/* Left Image Block */}
@@ -41,24 +41,20 @@ export default function AboutCompany() {
             </div>
 
             {/* Floating Stat Card */}
-            <div className="absolute bottom-6 left-6 flex items-center gap-4 rounded-2xl bg-white px-5 py-4 shadow-lg">
+            <div className="absolute bottom-6 left-6 flex items-center gap-4 rounded-2xl bg-white px-5 py-4 shadow-brand border border-border">
               <div className="relative h-14 w-14">
                 <div
-                  className="h-14 w-14 rounded-full"
-                  style={{
-                    background:
-                      "conic-gradient(#F4B321 0deg 108deg, #0F7B6C 108deg 360deg)",
-                  }}
+                  className="h-14 w-14 rounded-full bg-brand flex items-center justify-center text-white font-bold"
                 >
-                  <div className="absolute inset-[7px] rounded-full bg-white" />
+                  <div className="absolute inset-[4px] rounded-full border border-white/20" />
                 </div>
               </div>
 
               <div>
-                <h3 className="text-4xl font-bold leading-none text-[#183534]">
+                <h3 className="text-4xl font-bold leading-none text-text-primary">
                   30%
                 </h3>
-                <p className="mt-1 text-sm text-[#7A8383]">
+                <p className="mt-1 text-sm text-text-secondary font-medium">
                   Tax Conversion Rate
                 </p>
               </div>
@@ -67,22 +63,22 @@ export default function AboutCompany() {
 
           {/* Right Content */}
           <div>
-            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#2F8F83]">
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-accent">
               Why Choose Our Services
             </span>
 
-            <h2 className="max-w-[650px] text-[52px] font-bold leading-[1.05] text-[#183534]">
+            <h2 className="max-w-[650px] text-[52px] font-bold leading-[1.05] text-text-primary">
               The Future Of Financial
               <br />
               Service Place
             </h2>
 
-            <p className="mt-5 max-w-[650px] text-lg font-medium text-[#5A6262]">
+            <p className="mt-5 max-w-[650px] text-lg font-medium text-text-secondary">
               Finance Aescover A Moving Experience Like No Other At Outgrid.
               We Going Beyond Merely.
             </p>
 
-            <p className="mt-6 max-w-[700px] text-[15px] leading-8 text-[#7A8383]">
+            <p className="mt-6 max-w-[700px] text-[15px] leading-8 text-text-secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation dolore magna
@@ -97,16 +93,16 @@ export default function AboutCompany() {
                 return (
                   <div
                     key={index}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-4 bg-surface py-2.5 px-4 rounded-lg border border-border"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D8E4E1]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-border">
                       <Icon
                         size={18}
-                        className="text-[#2F8F83]"
+                        className="text-brand"
                       />
                     </div>
 
-                    <span className="font-semibold text-[#183534]">
+                    <span className="font-semibold text-brand text-[15px]">
                       {feature.title}
                     </span>
                   </div>
@@ -115,7 +111,7 @@ export default function AboutCompany() {
             </div>
 
             {/* CTA */}
-            <button className="mt-10 flex items-center gap-2 rounded-md bg-[#F4B321] px-8 py-4 font-semibold text-[#183534] transition hover:bg-[#e7aa1d]">
+            <button className="mt-10 flex items-center gap-2 rounded-md bg-accent px-8 py-4 font-semibold text-[#b86630] shadow-brand transition hover:-translate-y-0.5 hover:bg-[#b86630] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent">
               Take Our Service
               <ArrowRight size={18} />
             </button>
