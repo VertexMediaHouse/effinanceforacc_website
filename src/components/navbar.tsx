@@ -13,97 +13,103 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-[#0e6655] sticky top-0 z-50 shadow-md">
-      <div className="flex items-center justify-between px-6 lg:px-[60px] h-[72px] max-w-[1600px] mx-auto">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-[10px]">
-          <div className="w-[40px] h-[40px] rounded-full bg-white/15 flex items-center justify-center border-2 border-white/40">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="w-[22px] h-[22px]">
-              <path d="M3 17l4-8 4 4 3-6 4 10" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="19" cy="5" r="2" fill="white" stroke="none" />
-            </svg>
-          </div>
-          <span className="text-white text-[20px] font-bold tracking-[-0.3px]">Finwave</span>
-        </Link>
+    <div className="w-full fixed top-0 left-0 z-50 mt-6 px-6 lg:px-12 pointer-events-none transition-all duration-300">
+      <nav className="max-w-[1400px] mx-auto bg-[#006a52] rounded-full px-8 py-4 shadow-lg pointer-events-auto">
+        <div className="flex items-center justify-between">
+          
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 text-2xl font-bold text-white">
+            <div className="w-8 h-8 bg-white rounded-full flex justify-center items-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12C4 12 7 8 12 8C17 8 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
+                <path d="M4 12C4 12 7 16 12 16C17 16 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <span>Finwave</span>
+          </Link>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-[36px]">
-          {navLinks.map((link) => (
+          {/* Desktop Nav Links */}
+          <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-white/90">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`transition-colors flex items-center gap-1 ${
+                  pathname === link.to
+                    ? "text-white"
+                    : "hover:text-white/80"
+                }`}
+              >
+                {link.label}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Right */}
+          <div className="hidden lg:flex items-center gap-6">
+            <button aria-label="Search" className="text-white hover:text-white/80 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
             <Link
-              key={link.to}
-              to={link.to}
-              className={`text-[15px] font-medium transition-colors flex items-center gap-[4px] ${
-                pathname === link.to
-                  ? "text-[#f5a800]"
-                  : "text-white/90 hover:text-white"
-              }`}
+              to="/contact"
+              className="bg-white text-[#006a52] px-6 py-2.5 rounded-full font-semibold text-[15px] flex items-center gap-2 transition-transform hover:scale-105"
             >
-              {link.label}
-              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70">
-                <path d="M2 4l4 4 4-4" />
+              Lets Talk
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </Link>
-          ))}
-        </div>
+          </div>
 
-        {/* Desktop Right */}
-        <div className="hidden lg:flex items-center gap-[24px]">
-          <a href="tel:+1234567890" className="text-white/90 text-[15px] font-medium flex items-center gap-[6px] hover:text-white transition-colors">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-[16px] h-[16px]">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 014.95 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Contact Us
-          </a>
-          <Link
-            to="/services"
-            className="bg-[#f5a800] text-[#0d1b2a] px-[22px] py-[10px] rounded-[6px] text-[15px] font-semibold flex items-center gap-[8px] hover:bg-[#e09a00] transition-colors"
+          {/* Mobile Hamburger */}
+          <button
+            className="lg:hidden text-white p-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
           >
-            Get Started &nbsp;→
-          </Link>
+            {mobileOpen ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+                <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+                <path d="M3 12h18M3 6h18M3 18h18" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="lg:hidden text-white p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-              <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-              <path d="M3 12h18M3 6h18M3 18h18" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-[#0c5c4a] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="lg:hidden mt-4 pt-4 border-t border-white/20 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`text-[15px] font-medium py-2 transition-colors ${
+                  pathname === link.to ? "text-white" : "text-white/80 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              key={link.to}
-              to={link.to}
+              to="/contact"
               onClick={() => setMobileOpen(false)}
-              className={`text-[15px] font-medium py-2 border-b border-white/10 transition-colors ${
-                pathname === link.to ? "text-[#f5a800]" : "text-white/90 hover:text-white"
-              }`}
+              className="mt-2 bg-white text-[#006a52] px-6 py-3 rounded-full text-[15px] font-semibold text-center hover:bg-gray-100 transition-colors"
             >
-              {link.label}
+              Lets Talk
             </Link>
-          ))}
-          <Link
-            to="/services"
-            onClick={() => setMobileOpen(false)}
-            className="mt-2 bg-[#f5a800] text-[#0d1b2a] px-6 py-3 rounded-[6px] text-[15px] font-semibold text-center hover:bg-[#e09a00] transition-colors"
-          >
-            Get Started →
-          </Link>
-        </div>
-      )}
-    </nav>
+          </div>
+        )}
+      </nav>
+    </div>
   );
 }

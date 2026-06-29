@@ -1,43 +1,5 @@
 import { ArrowRight } from "lucide-react";
 
-const services = [
-  {
-    title: "Financial Growth",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/a.jpeg",
-    icon: "🕒",
-  },
-  {
-    title: "Cash Flow Visibility",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/n.jpeg",
-    icon: "💼",
-  },
-  {
-    title: "Audit & Assurance",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/s.jpeg",
-    icon: "📊",
-  },
-  {
-    title: "Financial Planning",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/n.jpeg",
-    icon: "📈",
-  },
-  {
-    title: "Cash Flow",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/a.jpeg",
-    icon: "💰",
-  },
-  {
-    title: "Secure Money",
-    description: "Pink salmon cherry salmon combtail gourami frigate mackerel snake",
-    image: "/assets/s.jpeg",
-    icon: "🛡️",
-  },
-];
 
 export default function IndustryWeServe() {
   const projects = [

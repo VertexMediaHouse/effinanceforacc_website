@@ -1,46 +1,9 @@
-import { Link } from "react-router-dom";
+import Navbar from "./navbar";
 
 export default function IndustriesHero() {
   return (
     <>
-      <nav className="bg-[#0e6655] sticky top-0 z-50 flex items-center justify-between px-[60px] h-[72px]">
-        <div className="flex items-center gap-[10px]">
-          <div className="w-[40px] h-[40px] rounded-full bg-white/15 flex items-center justify-center border-2 border-white/40">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="w-[22px] h-[22px]">
-              <path d="M3 17l4-8 4 4 3-6 4 10" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="19" cy="5" r="2" fill="white" stroke="none" />
-            </svg>
-          </div>
-          <span className="text-white text-[20px] font-bold tracking-[-0.3px]">Finwave</span>
-        </div>
-        <div className="flex items-center gap-[36px]">
-          <Link to="/" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">
-            Home <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70"><path d="M2 4l4 4 4-4" /></svg>
-          </Link>
-          <Link to="/services" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">
-            Service <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70"><path d="M2 4l4 4 4-4" /></svg>
-          </Link>
-          <Link to="/industries" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">
-            Industries <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70"><path d="M2 4l4 4 4-4" /></svg>
-          </Link>
-          <a href="#" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">
-            Pages <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70"><path d="M2 4l4 4 4-4" /></svg>
-          </a>
-          <a href="#" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">
-            Blog <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="w-[12px] h-[12px] opacity-70"><path d="M2 4l4 4 4-4" /></svg>
-          </a>
-          <a href="#" className="text-white/90 text-[15px] font-medium flex items-center gap-[4px] hover:text-white">Contact</a>
-        </div>
-        <div className="flex items-center gap-[24px]">
-          <a href="#" className="text-white/90 text-[15px] font-medium flex items-center gap-[6px]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-[16px] h-[16px]"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /></svg>
-            Log In
-          </a>
-          <a href="#" className="bg-white/15 text-white border border-white/30 px-[22px] py-[10px] rounded-[6px] text-[15px] font-semibold flex items-center gap-[8px] hover:bg-white/25 transition-colors">
-            Get Started &nbsp;→
-          </a>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="bg-[#0e6655] min-h-[500px] relative overflow-hidden flex items-center px-[60px]">
         {/* Dashed circles decorations */}

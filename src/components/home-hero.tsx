@@ -1,3 +1,5 @@
+import Navbar from "./navbar";
+
 export default function HomeHero() {
     return (
         <div className="relative min-h-screen bg-[#f3f9f8] overflow-hidden font-sans">
@@ -10,44 +12,9 @@ export default function HomeHero() {
                 }}
             />
 
+            <Navbar />
+
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-                {/* Header */}
-                <header className="pt-6">
-                    <div className="bg-[#006a52] rounded-[40px] px-8 py-4 flex justify-between items-center text-white">
-                        <div className="flex items-center gap-2 text-2xl font-bold">
-                            <div className="w-8 h-8 bg-white rounded-full flex justify-center items-center">
-                                {/* Simplified Finwave Logo */}
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M4 12C4 12 7 8 12 8C17 8 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
-                                    <path d="M4 12C4 12 7 16 12 16C17 16 20 12 20 12" stroke="#006a52" strokeWidth="3" strokeLinecap="round"/>
-                                </svg>
-                            </div>
-                            <span>Finwave</span>
-                        </div>
-
-                        <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium">
-                            <a href="#home" className="flex items-center gap-1 hover:text-white/80 transition-colors">Home <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-                            <a href="#service" className="flex items-center gap-1 hover:text-white/80 transition-colors">Service <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-                            <a href="#pages" className="flex items-center gap-1 hover:text-white/80 transition-colors">Pages <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-                            <a href="#elements" className="flex items-center gap-1 hover:text-white/80 transition-colors">Elements <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-                            <a href="#blog" className="flex items-center gap-1 hover:text-white/80 transition-colors">Blog <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-                            <a href="#contact" className="hover:text-white/80 transition-colors">Contact</a>
-                        </nav>
-
-                        <div className="flex items-center gap-6">
-                            <button aria-label="Search" className="hover:text-white/80 transition-colors">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
-                            </button>
-                            <button className="bg-white text-[#006a52] px-6 py-2.5 rounded-full font-semibold text-[15px] flex items-center gap-2 transition-transform hover:scale-105">
-                                Lets Talk 
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </header>
 
                 {/* Hero Section */}
                 <section className="flex flex-col lg:flex-row items-center justify-between pt-10 pb-14 relative">
