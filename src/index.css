@@ -1,0 +1,52 @@
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+  @import "swiper/css";
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    body {
+      @apply min-h-screen flex flex-col text-primary-text bg-hero-gradient;
+    }
+  }
+
+  @keyframes marquee-left {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left 35s linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 35s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
