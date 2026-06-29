@@ -24,7 +24,7 @@ const Star = () => (
   </svg>
 );
 
-function Track({ hovered, setHovered }) {
+function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (val: string | null) => void }) {
   return (
     <>
       {items.map((item, i) => (

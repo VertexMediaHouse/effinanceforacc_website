@@ -3,7 +3,7 @@
 import { ArrowRight, ShieldCheck, PieChart, Box, Layers } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
+
 
 export default function whychooseus() {
   const services = [
