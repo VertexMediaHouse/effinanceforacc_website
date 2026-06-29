@@ -72,7 +72,7 @@ function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (v
 
 export default function MarqueeSlider() {
   const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <>
