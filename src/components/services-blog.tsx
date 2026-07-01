@@ -18,20 +18,27 @@ export default function ServicesBlog() {
   ];
 
   return (
-    <section className="bg-white px-[60px] py-[90px] text-center">
-      <p className="text-[12px] font-bold tracking-[2px] uppercase text-[#1a7a65] mb-[14px]">
-        Extreme People For Us
-      </p>
-      <h2 className="text-[40px] font-extrabold text-[#0d1b2a] mb-[16px]">
-        Explore Blogs &amp;
-      </h2>
-      <p className="text-[15px] text-[#6b7280] max-w-[560px] mx-auto mb-[48px] leading-[1.65]">
-        Iscover A Moving Experience Like No Other At Outgrid We Go Beyond Merely
-        Transporting Items. Get Rid Of Manual Tracking Spreadsheets, And Get An
-        Accurate
-      </p>
+    <section className="bg-white py-24 mx-24 text-left">
+      <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
+        <div>
+          <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+            Why Choose Us
+          </span>
 
-      <div className="grid grid-cols-3 gap-[28px]">
+          <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
+            Financial Solutions <br /> That Help Your Business Grow
+          </h2>
+        </div>
+
+        <div className="flex items-end lg:justify-end">
+          <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
+            Reliable bookkeeping, accurate reporting, and dedicated financial support
+            for US businesses and accounting firms.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 px-10 gap-[28px]">
         {blogs.map((blog, i) => (
           <div
             key={i}
@@ -53,7 +60,7 @@ export default function ServicesBlog() {
               </div>
             </div>
             <div className="p-[22px]">
-              <span className="inline-block text-[11px] font-semibold text-[#1a7a65] bg-[#e8f5f2] px-[10px] py-[3px] rounded-[4px] mb-[12px]">
+              <span className="inline-block text-[11px] font-semibold text-[#ffffff] bg-[#382f82] px-[10px] py-[3px] rounded-[4px] mb-[12px]">
                 {blog.tag}
               </span>
               <h3 className="text-[17px] font-bold text-[#0d1b2a] leading-[1.4] mb-[10px]">

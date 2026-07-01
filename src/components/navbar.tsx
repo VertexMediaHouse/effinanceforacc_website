@@ -1,62 +1,155 @@
-import { PhoneCall, ArrowRight, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Mail, Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const Navbar = () => {
+const NAV_ITEMS = [
+  { label: "Home", href: "#", hasDropdown: false, active: true },
+  { label: "Service", href: "#", hasDropdown: true },
+  { label: "Pages", href: "#", hasDropdown: true },
+  { label: "Elements", href: "#", hasDropdown: true },
+  { label: "Blog", href: "#", hasDropdown: true },
+  { label: "Contact", href: "#", hasDropdown: false },
+];
+
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full font-sans sticky top-0 z-50 bg-white shadow-[0_1px_0_var(--color-border)]">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-16 px-6">
-        {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded">
-          <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold text-xl relative overflow-hidden">
-            <div className="absolute w-6 h-6 border-[3px] border-transparent border-t-white border-l-white rounded-full -top-1 -left-1 opacity-80"></div>
-            <div className="absolute w-8 h-8 border-[3px] border-transparent border-b-white border-r-white rounded-full -bottom-1 -right-1 opacity-40"></div>
-            <span className="italic relative z-10 drop-shadow-md">F</span>
-          </div>
-          <span className="text-3xl font-extrabold text-brand tracking-tight">Finwave</span>
-        </Link>
+    <header className="w-full font-sans text-[13px]">
+      {/* Top utility bar */}
+      <div className="bg-[#020450] text-white">
+        <div className="mx-6 flex h-16 max-w-8xl xl:pl-24 items-center justify-between px-6 lg:px-20">
+          <div className="flex items-center gap-8">
+            <a
+              href="tel:+12377678889"
+              className="flex items-center gap-3 text-base font-medium text-white"
+            >
+              <Phone className="h-5 w-5" strokeWidth={2} />
+              <span>Call: +123-7767-8889</span>
+            </a>
 
-        {/* Links */}
-        <nav className="hidden xl:flex items-center space-x-8 font-semibold text-[15px]">
-          <Link to="/" className="text-text-primary flex items-center hover:text-brand transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Home <ChevronDown size={16} className="ml-1 opacity-70" />
-          </Link>
-          <Link to="/services" className="text-text-primary flex items-center hover:text-brand transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Service <ChevronDown size={16} className="ml-1 opacity-70" />
-          </Link>
-          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Pages <ChevronDown size={16} className="ml-1 opacity-70" />
+            <span className="hidden items-center gap-3 text-base sm:flex">
+              <Mail className="h-5 w-5" strokeWidth={2} />
+              <span>Mail: info@gmail.com</span>
+            </span>
           </div>
-          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Elements <ChevronDown size={16} className="ml-1 opacity-70" />
-          </div>
-          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Blog <ChevronDown size={16} className="ml-1 opacity-70" />
-          </div>
-          <div className="text-text-primary flex items-center hover:text-brand transition-colors cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-brand rounded px-1">
-            Contact
-          </div>
-        </nav>
 
-        {/* Right Section */}
-        <div className="hidden lg:flex items-center space-x-8">
-          <div className="flex items-center space-x-3">
-            <div className="text-brand bg-surface p-2 rounded-full">
-              <PhoneCall size={24} />
-            </div>
-            <div>
-              <p className="text-sm text-text-secondary font-medium">Call:</p>
-              <p className="text-[17px] font-bold text-text-primary leading-none tracking-tight">+123-7787-8989</p>
-            </div>
+          <div className="hidden md:flex items-center divide-x divide-white/40">
+            <a href="#" aria-label="Facebook" className="px-3 transition-colors hover:text-white/80">
+              <FaFacebook className="h-5 w-5" />
+            </a>
+
+            <a href="#" aria-label="Twitter" className="px-3 transition-colors hover:text-white/80">
+              <FaTwitter className="h-5 w-5" />
+            </a>
+
+            <a href="#" aria-label="LinkedIn" className="px-3 transition-colors hover:text-white/80">
+              <FaLinkedin className="h-5 w-5" />
+            </a>
+
+            <a href="#" aria-label="Instagram" className="px-3 transition-colors hover:text-white/80">
+              <FaInstagram className="h-5 w-5" />
+            </a>
           </div>
-          <Link to="#" className="bg-brand text-white px-7 py-3.5 rounded font-bold flex items-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brand hover:bg-[#b8662f] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand">
-            Free Consultation <ArrowRight size={20} className="ml-2" />
-          </Link>
         </div>
       </div>
+
+      <div className="bg-white">
+        <div className="mx-20 flex h-20 max-w-8xl items-center justify-between px-6 lg:px-8">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3">
+            <img
+              src="assets/logo.png"
+              alt="logo"
+              className="h-20 w-auto"
+            />
+            <span className="text-2xl font-bold text-gray-900">
+              Effinanceforacc
+            </span>
+          </a>
+
+          {/* Right Section */}
+          <div className="hidden lg:flex items-center gap-10 ml-auto">
+            {/* Desktop Nav */}
+            <nav className="flex items-center gap-8">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`flex items-center gap-1 text-[16px] transition-colors hover:text-[#392f83] ${item.active
+                    ? "font-semibold text-gray-900"
+                    : "font-medium text-gray-600"
+                    }`}
+                >
+                  {item.label}
+                  {item.hasDropdown && (
+                    <ChevronDown className="h-4 w-4" strokeWidth={2} />
+                  )}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA */}
+            <a
+              href="#"
+              className="group flex items-center gap-3 rounded-md border border-[#392f83] py-2 pl-6 pr-2 text-[15px] font-semibold text-[#392f83] transition-all hover:bg-[#392f83] hover:text-white"
+            >
+              Free Consultation
+
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#392f83] text-white transition-colors group-hover:bg-white group-hover:text-[#392f83]">
+                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              </span>
+            </a>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <button
+            className="text-gray-800 lg:hidden"
+            onClick={() => setMobileOpen((open) => !open)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <X className="h-7 w-7" />
+            ) : (
+              <Menu className="h-7 w-7" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile nav */}
+        {mobileOpen && (
+          <div className="border-t border-gray-100 px-6 py-5 lg:hidden">
+            <nav className="flex flex-col gap-4">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`flex items-center justify-between text-[16px] ${item.active
+                    ? "font-semibold text-gray-900"
+                    : "font-medium text-gray-600"
+                    }`}
+                >
+                  {item.label}
+                  {item.hasDropdown && (
+                    <ChevronDown className="h-4 w-4" strokeWidth={2} />
+                  )}
+                </a>
+              ))}
+            </nav>
+
+            <a
+              href="#"
+              className="mt-6 flex items-center justify-center gap-3 rounded-md border border-[#392f83] py-2 text-[15px] font-semibold text-[#392f83]"
+            >
+              Free Consultation
+
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#392f83] text-white">
+                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              </span>
+            </a>
+          </div>
+        )}
+      </div>
     </header>
-
   );
-};
-
-export default Navbar;
+}

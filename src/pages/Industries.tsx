@@ -2,7 +2,7 @@ import IndustriesHero from "../components/industries-hero";
 import IndustriesCaseStudies from "../components/industries-case-studies";
 import ServicesCta from "../components/services-cta";
 import Footer from "../components/footer";
-import TestimonialCard from "../components/tesimonialcard";
+import Testimonial from "../components/testimonials";
 
 export default function Industries() {
   return (
@@ -10,7 +10,7 @@ export default function Industries() {
       <IndustriesHero />
       <IndustriesCaseStudies />
       <ServicesCta />
-      <TestimonialCard/>
+      <Testimonial/>
       <Footer />
     </main>
   );

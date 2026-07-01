@@ -1,129 +1,177 @@
-import Navbar from "./navbar";
-
 export default function HomeHero() {
     return (
-        <div className="relative min-h-screen bg-bg overflow-hidden font-sans">
+        <div className="relative min-h-[810px] lg:min-h-[640px] overflow-hidden bg-[#c97a3d]/5 flex items-center">
 
-            {/* SVG noise texture in orange tones */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
-                <filter id="orange-noise">
-                    <feTurbulence
-                        type="fractalNoise"
-                        baseFrequency="0.65"
-                        numOctaves="4"
-                        stitchTiles="stitch"
-                    />
-                    <feColorMatrix
-                        type="matrix"
-                        values="0.8 0 0 0 0.51
-                                0.3 0 0 0 0.29
-                                0   0 0 0 0.14
-                                0   0 0 0.08 0"
-                    />
-                </filter>
-                <rect width="100%" height="100%" filter="url(#orange-noise)" />
-            </svg>
+            {/* Base background */}
+            <div className="absolute inset-0 bg-[#f7f1eb]" />
 
-            <Navbar />
+            {/* Soft Gradient */}
+            <div
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "radial-gradient(circle at 70% 15%, rgba(201,122,61,.12), transparent 45%), linear-gradient(180deg,#f7f1eb 0%,#f3ece5 100%)",
+                }}
+            />
 
-            <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+            {/* Patterns */}
+            <div
+                className="absolute inset-0 opacity-[0.1]"
+                style={{
+                    backgroundImage: `
+                    linear-gradient(
+                        45deg,
+                        rgba(0,0,0,.12) 25%,
+                        transparent 25%,
+                        transparent 50%,
+                        rgba(0,0,0,.12) 50%,
+                        rgba(0,0,0,.12) 75%,
+                        transparent 75%,
+                        transparent
+                    )`,
+                    backgroundSize: "120px 120px",
+                }}
+            />
+            <div
+                className="absolute inset-0 opacity-[0.1]"
+                style={{
+                    backgroundImage: `
+                    linear-gradient(
+                        -45deg,
+                        rgba(0,0,0,.12) 25%,
+                        transparent 25%,
+                        transparent 50%,
+                        rgba(0,0,0,.12) 50%,
+                        rgba(0,0,0,.12) 75%,
+                        transparent 75%,
+                        transparent
+                    )`,
+                    backgroundSize: "120px 120px",
+                }}
+            />
 
-                {/* Hero Section */}
-                <section className="flex flex-col lg:flex-row items-center justify-between pt-10 pb-14 relative">
+            {/* Noise */}
+            <div className="absolute inset-0 pointer-events-none opacity-[0.12]">
+                <svg className="w-full h-full" preserveAspectRatio="none">
+                    <filter id="noiseFilter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" />
+                        <feColorMatrix type="saturate" values="0" />
+                        <feComponentTransfer>
+                            <feFuncA type="table" tableValues="0 0.18" />
+                        </feComponentTransfer>
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#noiseFilter)" fill="white" />
+                </svg>
+            </div>
 
-                    {/* Left Content */}
-                    <div className="flex-1 max-w-[650px] relative">
-                        <div className="text-accent text-sm font-bold tracking-[0.15em] uppercase mb-6 flex items-center gap-2">
+            {/* Vignette */}
+            <div
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "radial-gradient(circle, transparent 55%, rgba(0,0,0,.05) 100%)",
+                }}
+            />
+
+            {/* Content wrapper */}
+            <div className="relative z-15 mt-[35px] max-w-[1320px] mx-auto w-full px-6 lg:px-8 flex items-center">
+
+                <section className="flex flex-col lg:flex-row items-center justify-between gap-10 w-full">
+
+                    {/* LEFT CONTENT — FIXED CENTERING */}
+                    <div className="flex-1 max-w-[540px] flex flex-col justify-center">
+
+                        <div className="text-[#8a4726] text-xs font-bold tracking-[0.15em] uppercase mb-4">
                             EXCLUSIVE FINANCE APPS
                         </div>
 
-                        <h1 className="text-[64px] leading-[1.1] font-extrabold text-text-primary mb-6 drop-shadow-sm">
+                        <h1 className="text-[40px] md:text-[48px] lg:text-[52px] leading-[1.15] font-extrabold text-[#1f1f1f] mb-4">
                             Transform
-                            <span className="inline-flex items-center justify-center border-2 border-accent rounded-full w-24 h-[60px] mx-4 align-middle bg-white shadow-brand">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M5 12h14M15 5l7 7-7 7" /></svg>
+<span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#ffffffff"
+                                    strokeWidth="2"
+                                >
+                                    <path d="M5 12h14M15 5l7 7-7 7" />
+                                </svg>
                             </span>
                             Your <br />
                             Business With Expert <br />
                             Accountant
                         </h1>
 
-                        <p className="text-[17px] leading-[1.7] text-text-secondary mb-10 max-w-[540px]">
+                        <p className="text-[15px] leading-[1.6] text-[#1f1f1f]/80 mb-6 max-w-[480px]">
                             Finance recover a moving experience like no other at Outgrid beyond merely transporting items of manual tracking spreadsheets shoe.
                         </p>
 
-                        <button className="bg-brand text-white px-8 py-4 rounded-full font-bold text-[16px] flex items-center gap-3 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brand hover:bg-[#b8662f] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand">
+                        <button
+                            className="max-w-fit text-white px-6 py-3 rounded-md font-bold text-[15px] flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                            style={{
+                                background:
+                                    "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
+                            }}
+                        >
                             Take Our Services
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                         </button>
                     </div>
 
-                    {/* Right Content (Image Placeholder & Floating Elements) */}
-                    <div className="flex-1 relative flex justify-center items-center h-[700px] w-full mt-12 lg:mt-0">
+                    {/* RIGHT CONTENT — FIXED IMAGE + DOODLES */}
+                    <div className="flex-[1.1] relative h-[600px] flex items-center justify-center">
 
-                        {/* Main Image Placeholder */}
-                        <div className="w-[450px] h-[650px] rounded-b-full overflow-hidden relative z-10 flex items-end justify-center">
-                            <div className="w-full h-full bg-black/5 rounded-b-[200px] border-4 border-white border-dashed flex items-center justify-center text-[#556987] font-medium text-lg">
-                                [ Main Image Placeholder ]
-                            </div>
-                        </div>
-
-                        {/* Floating Coins & Graph Doodle */}
-                        <div className="absolute top-[20%] -left-[10%] lg:-left-[20%] z-20" style={{ animation: 'bounce 4s infinite' }}>
-                            <svg width="220" height="160" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" className="-rotate-6 opacity-90 drop-shadow-md">
-                                <g stroke="#1a2b3c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="#ffffff">
-                                    <g transform="translate(30, 40)">
-                                        <ellipse cx="40" cy="70" rx="30" ry="10" fill="#f8f9fa" />
-                                        <path d="M10 70 v-10 a30 10 0 0 0 60 0 v10" fill="none" />
-                                        <ellipse cx="40" cy="60" rx="30" ry="10" fill="#f8f9fa" />
-                                        <path d="M10 60 v-10 a30 10 0 0 0 60 0 v10" fill="none" />
-                                        <ellipse cx="40" cy="50" rx="30" ry="10" fill="#f8f9fa" />
-                                        <path d="M10 50 v-10 a30 10 0 0 0 60 0 v10" fill="none" />
-                                        <ellipse cx="40" cy="40" rx="30" ry="10" fill="#f8f9fa" />
-                                        <path d="M15 42 v8 M25 43 v8 M35 44 v8 M45 44 v8 M55 43 v8 M65 42 v8" strokeWidth="1.5" stroke="#1a2b3c" />
-                                        <g transform="translate(70, 35) rotate(15)">
-                                            <ellipse cx="0" cy="0" rx="8" ry="22" fill="#cd753a" stroke="#2a2456" />
-                                            <path d="M0 -22 h4 a8 22 0 0 1 0 44 h-4" fill="none" stroke="#2a2456" />
-                                            <path d="M3 -8 S -1 -4 3 0 S -1 4 3 8 M 1 -10 v20" strokeWidth="1.5" fill="none" />
-                                        </g>
-                                    </g>
-                                    <g transform="translate(130, 20) rotate(-5)">
-                                        <rect x="0" y="0" width="55" height="65" rx="3" fill="#ffffff" />
-                                        <path d="M10 50 h35 M10 50 v-35" strokeWidth="2" stroke="#2a2456" />
-                                        <rect x="15" y="30" width="6" height="20" fill="#f4f0f8" />
-                                        <rect x="25" y="15" width="6" height="35" fill="#f4f0f8" />
-                                        <rect x="35" y="25" width="6" height="25" fill="#f4f0f8" />
-                                        <path d="M18 35 L 28 20 L 38 22 L 45 10" stroke="#cd753a" strokeWidth="2" fill="none" />
-                                    </g>
-                                </g>
-                                <path d="M20 20 Q25 25 30 20 Q25 30 20 35 Q15 30 10 25 Q15 20 20 20 Z" fill="#cd753a" />
-                                <path d="M100 10 Q103 13 106 10 Q103 16 100 19 Q97 16 94 13 Q97 10 100 10 Z" fill="#885b67" />
+                        {/* DOODLE 1 — moved further out */}
+                        <div className="absolute left-[-20px] top-10 w-40 h-40 opacity-60 hidden md:block animate-float-1">
+                            <svg viewBox="0 0 240 240" fill="none" stroke="#5a6e79" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M20 40l-8-12M38 22V8M14 62H2" opacity="0.6" strokeWidth="1.5" />
+                                <g transform="rotate(-5 60 120)">
+                                    <path d="M30 70v16c0 8 18 14 40 14s40-6 40-14V70" />
+                                    <path d="M30 86v16c0 8 18 14 40 14s40-6 40-14V86" />
+                                    <path d="M30 102v16c0 8 18 14 40 14s40-6 40-14v-16" />
+                                    <ellipse cx="70" cy="70" rx="40" ry="15" fill="#f7f1eb" fillOpacity="0.6" />
+                                    <ellipse cx="70" cy="70" rx="33" ry="12" strokeWidth="1" strokeDasharray="4 3" />
+                                </g> <g transform="translate(130,45) rotate(12)">
+                                    <circle cx="40" cy="40" r="34" fill="#f7f1eb" fillOpacity="0.7" strokeWidth="3" />
+                                    <text x="30" y="51" fontSize="34" fontFamily="serif" fontWeight="900" fill="#5a6e79">$</text>
+                                    <path d="M6 46a34 34 0 0 0 63 18" strokeWidth="1.5" /> </g> <g transform="translate(110,115) rotate(15)">
+                                    <path d="M10 50v14c0 7 16 12 35 12s35-5 35-12V50" />
+                                    <ellipse cx="45" cy="50" rx="35" ry="13" fill="#f7f1eb" fillOpacity="0.5" />
+                                </g> <path d="M195 160c8 3 18 12 8 22" strokeWidth="1.5" opacity="0.6" />
                             </svg>
+
                         </div>
 
-                        {/* Floating Stats Card */}
-                        <div className="absolute bottom-32 -left-10 z-20 bg-surface rounded-2xl p-6 shadow-brand-lg w-[300px] border border-border">
-                            <div className="mb-5">
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="text-text-primary font-bold text-[14px]">Tax Consultation</span>
-                                    <span className="text-text-primary font-bold text-[14px]">70%</span>
-                                </div>
-                                <div className="w-full bg-white h-2.5 rounded-full overflow-hidden shadow-inner border border-border">
-                                    <div className="bg-brand h-full rounded-full relative" style={{ width: '70%' }}>
-                                        <div className="absolute inset-0 bg-white/20"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="text-text-primary font-bold text-[14px]">Cost Calculation</span>
-                                    <span className="text-text-primary font-bold text-[14px]">90%</span>
-                                </div>
-                                <div className="w-full bg-white h-2.5 rounded-full overflow-hidden shadow-inner border border-border">
-                                    <div className="bg-brand h-full rounded-full relative" style={{ width: '90%' }}>
-                                        <div className="absolute inset-0 bg-white/20"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        {/* DOODLE 2 — moved further out */}
+                        <div className="absolute right-[-10px] top-20 w-36 h-36 opacity-60 hidden md:block animate-float-2">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="#5a6e79" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M25 25v120h130" strokeWidth="3" />
+                                <path d="M25 55h115M25 85h115M25 115h115" strokeDasharray="4 5" strokeWidth="1" opacity="0.4" />
+                                <g> <rect x="40" y="65" width="22" height="80" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M40 65l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+                                    <path d="M62 65l10-8v80l-10 8Z" />
+                                </g>
+                                <g>
+                                    <rect x="78" y="85" width="22" height="60" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M78 85l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+                                    <path d="M100 85l10-8v60l-10 8Z" />
+                                </g>
+                                <g>
+                                    <rect x="116" y="105" width="22" height="40" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M116 105l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+
+                                    <path d="M138 105l10-8v40l-10 8Z" />
+                                </g>
+                                <path d="M145 130c5-5 12-15 20-10" strokeWidth="1.5" opacity="0.5" />
+                            </svg>                        </div>
+
+                        {/* IMAGE — FIXED BOTTOM GAP */}
+                        <div className="relative w-full h-full flex items-end justify-center">
+                            <img
+                                src="assets/homehero.png"
+                                alt=""
+                                className="w-[90%] max-h-[610px] object-contain object-bottom"
+                            />
                         </div>
 
                     </div>

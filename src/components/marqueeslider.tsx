@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "@fontsource/anton";
 
 const items = [
   "Marketing Agency",
@@ -19,18 +20,24 @@ const Star = () => (
   >
     <path
       d="M38.5256 32.4787L30.7455 23.743L41 18.2387L29.5113 16.623L33.8793 5.71875L24.0604 11.9787L20.497 0.773438L16.9396 11.9787L7.1207 5.71875L11.4827 16.623L0 18.2387L10.2485 23.743L2.4744 32.4787L13.8058 30.003L13.3763 41.7734L20.497 32.4787L27.6177 41.7734L27.1881 30.003L38.5256 32.4787Z"
-      fill="#cd753a"
+      fill="#333188"
     />
   </svg>
 );
 
-function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (val: string | null) => void }) {
+function Track({
+  hovered,
+  setHovered,
+}: {
+  hovered: string | null;
+  setHovered: (val: string | null) => void;
+}) {
   return (
     <>
       {items.map((item, i) => (
         <div
           key={i}
-          className="flex items-center shrink-0 whitespace-nowrap"
+          className="flex shrink-0 items-center whitespace-nowrap"
         >
           <div
             className="relative cursor-pointer"
@@ -39,9 +46,9 @@ function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (v
           >
             {/* Outline */}
             <span
-              className="block text-[clamp(60px,7vw,96px)] font-black uppercase leading-none text-transparent"
+              className="block font-['Anton'] text-[clamp(58px,6vw,90px)] uppercase leading-[0.9] tracking-[-0.03em] text-transparent"
               style={{
-                WebkitTextStroke: "1px #cd753a",
+                WebkitTextStroke: "1.5px #333188",
               }}
             >
               {item}
@@ -49,7 +56,7 @@ function Track({ hovered, setHovered }: { hovered: string | null; setHovered: (v
 
             {/* Fill */}
             <span
-              className="absolute inset-0 overflow-hidden whitespace-nowrap text-[clamp(60px,7vw,96px)] font-black uppercase leading-none text-[#cd753a]"
+              className="absolute inset-0 overflow-hidden whitespace-nowrap font-['Anton'] text-[clamp(58px,6vw,90px)] uppercase leading-[0.9] tracking-[-0.03em] text-[#333188]"
               style={{
                 clipPath:
                   hovered === item
@@ -87,7 +94,7 @@ export default function MarqueeSlider() {
         }
       `}</style>
 
-      <section className="overflow-hidden bg-white py-8">
+      <section className="overflow-hidden bg-[#333188]/10 py-10">
         <div
           className="flex w-max"
           style={{

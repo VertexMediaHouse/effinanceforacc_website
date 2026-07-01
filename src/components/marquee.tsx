@@ -9,7 +9,7 @@ export default function Marquee() {
   ];
 
   return (
-    <section className="border-t border-black/5 py-10 overflow-hidden max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section className="border-t border-black/5 py-10 overflow-hidden max-w-[1400px] mx-20 px-6 lg:px-12">
       <div className="flex items-center">
         {/* LEFT COLUMN - 50% */}
         <div className="w-1/2 flex items-center gap-4">
