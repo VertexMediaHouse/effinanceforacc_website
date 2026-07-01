@@ -37,7 +37,7 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <div className="mb-4 flex items-center gap-3 text-white/60">
+                <div className="mb-4 flex items-center gap-3 text-white">
                   <Phone className="h-5 w-5 shrink-0 text-primary" />
                   <h4 className="text-lg font-bold">
                     123(55)-90067990
