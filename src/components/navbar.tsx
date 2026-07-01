@@ -3,12 +3,10 @@ import { Mail, Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#", hasDropdown: false, active: true },
-  { label: "Service", href: "#", hasDropdown: true },
-  { label: "Pages", href: "#", hasDropdown: true },
-  { label: "Elements", href: "#", hasDropdown: true },
-  { label: "Blog", href: "#", hasDropdown: true },
-  { label: "Contact", href: "#", hasDropdown: false },
+  { label: "Home", href: "/", hasDropdown: false, active: true },
+  { label: "Services", href: "/services", hasDropdown: false },
+  { label: "Industries", href: "/industries", hasDropdown: false },
+  { label: "Engagement", href: "/engagement-model", hasDropdown: false },
 ];
 
 export default function Navbar() {

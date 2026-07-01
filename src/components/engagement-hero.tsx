@@ -1,4 +1,4 @@
-export default function IndustriesHero() {
+export default function EngagementModelHero() {
     return (
         <div className="relative min-h-[810px] lg:min-h-[640px] overflow-hidden bg-[#c97a3d]/5 flex items-center">
 
@@ -87,16 +87,16 @@ export default function IndustriesHero() {
 
                         <h1 className="text-[40px] md:text-[48px] lg:text-[52px] leading-[1.15] font-extrabold text-[#1f1f1f] mb-4">
                             Transform
-                            <span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">                                <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="#ffffffff"
-                                strokeWidth="2"
-                            >
-                                <path d="M5 12h14M15 5l7 7-7 7" />
-                            </svg>
+<span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="#ffffffff"
+                                    strokeWidth="2"
+                                >
+                                    <path d="M5 12h14M15 5l7 7-7 7" />
+                                </svg>
                             </span>
                             Your <br />
                             Business With Expert <br />

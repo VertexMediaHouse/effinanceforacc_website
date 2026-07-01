@@ -3,61 +3,77 @@ export default function ProcessOfWork() {
     {
       number: "01",
       title: "Online Application",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
     },
     {
       number: "02",
       title: "Pick A Plan",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
     },
     {
       number: "03",
       title: "Compare Quotes",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
     },
     {
       number: "04",
       title: "Sign Your Contract",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
-    }
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
+    },
   ];
 
   return (
-    <section className="bg-[#0e6655] py-28 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 text-center">
+    <section className="relative overflow-hidden bg-[#F8F7FF] py-28">
+      <div className="mx-auto max-w-[1400px] px-6">
         {/* Header */}
-        <span className="block text-[#f5a800] text-[13px] font-bold tracking-[1.5px] uppercase mb-4">
-          WE HELP YOU ON EVERY STEP OF THE JOURNEY
-        </span>
-        <h2 className="text-[48px] font-bold text-white mb-20 leading-[1.2]">
-          We Make Simple Process<br/>To Get Good Results
-        </h2>
+        <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
+          <div>
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+              Our Process
+            </span>
 
-        {/* Steps Container */}
+            <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
+              A Simple Process <br />
+              That Delivers Results
+            </h2>
+          </div>
+
+          <div className="flex items-end lg:justify-end">
+            <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
+              From understanding your requirements to delivering measurable
+              financial outcomes, our streamlined process keeps every step
+              transparent, efficient, and focused on your business goals.
+            </p>
+          </div>
+        </div>
+
+        {/* Steps */}
         <div className="relative mt-12">
-          {/* Connecting Dashed Line */}
-          <div className="absolute top-[80px] left-[10%] right-[10%] h-[1px] border-t border-dashed border-[#1a7f6b] z-0 hidden md:block"></div>
+          {/* Dashed Line */}
+          <div className="absolute left-[10%] right-[10%] top-[115px] hidden h-px border-t border-dashed border-[#1a7f6b] md:block"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div className="relative z-10 grid grid-cols-1 gap-8 text-center md:grid-cols-4">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <span className="text-white text-[14px] font-bold uppercase tracking-[1px] mb-2">
+                <span className="mb-2 text-[14px] font-bold uppercase tracking-[1px] text-[#202020]">
                   STEP
                 </span>
-                
-                {/* Number with Shadow */}
-                <div className="text-[56px] font-extrabold text-white leading-none mb-6 drop-shadow-[0_8px_8px_rgba(0,0,0,0.25)]">
+
+                <span className="mb-6 text-[56px] font-extrabold leading-none text-black">
                   {step.number}
-                </div>
+                </span>
 
-                {/* Dot on the line */}
-                <div className="w-[12px] h-[12px] rounded-full bg-[#f5a800] border-[2px] border-[#0e6655] outline outline-[2px] outline-[#f5a800] mb-8 relative z-10"></div>
+                <div className="relative z-10 mb-8 h-3 w-3 rounded-full border-2 border-[#0e6655] bg-[#c97a3d] outline outline-2 outline-[#f5a800]"></div>
 
-                {/* Content */}
-                <h3 className="text-white text-[20px] font-bold mb-4">
+                <h3 className="mb-4 text-[20px] font-bold text-black">
                   {step.title}
                 </h3>
-                <p className="text-white/80 text-[14px] leading-[1.8] max-w-[280px]">
+
+                <p className="max-w-[280px] text-[14px] leading-[1.8] text-black">
                   {step.description}
                 </p>
               </div>

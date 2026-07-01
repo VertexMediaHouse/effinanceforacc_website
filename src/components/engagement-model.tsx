@@ -4,48 +4,70 @@ const models = [
   {
     icon: Clock,
     title: "Project Based",
-    description: "Fixed price and timeline for well-defined projects with clear deliverables and scope."
+    description:
+      "Fixed price and timeline for well-defined projects with clear deliverables and scope.",
   },
   {
     icon: Users,
     title: "Dedicated Team",
-    description: "A flexible team of experts fully integrated into your workflow for ongoing, long-term collaboration."
+    description:
+      "A flexible team of experts fully integrated into your workflow for ongoing, long-term collaboration.",
   },
   {
     icon: Briefcase,
     title: "Consulting",
-    description: "Strategic advice and expert guidance tailored to your specific financial and operational challenges."
-  }
+    description:
+      "Strategic advice and expert guidance tailored to your specific financial and operational challenges.",
+  },
 ];
 
 export default function EngagementModel() {
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-[1400px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-[#0F7B6C] text-[12px] font-bold uppercase tracking-[2px] block mb-4">
-            How We Work
-          </span>
-          <h2 className="text-[42px] font-bold text-[#183534] leading-[1.1]">
-            Our Engagement Models
-          </h2>
+    <section className="bg-[#fffff] py-24">
+      <div className="mx-auto max-w-[1400px] px-6">
+        {/* Header */}
+        <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
+          <div>
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+              Engagement Models
+            </span>
+
+            <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
+              Flexible Engagement Models <br /> Built Around Your Business
+            </h2>
+          </div>
+
+          <div className="flex items-end lg:justify-end">
+            <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
+              Whether you need project-based support, a dedicated offshore team,
+              or strategic financial consulting, we offer flexible engagement
+              models that adapt to your business goals and growth plans.
+            </p>
+          </div>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+
+        {/* Cards */}
+        <div className="grid gap-8 md:grid-cols-3">
           {models.map((model, index) => {
             const Icon = model.icon;
+
             return (
-              <div 
-                key={index} 
-                className="group bg-[#EDF5F4] p-10 rounded-[20px] transition-all duration-300 hover:-translate-y-2 hover:bg-[#0F7B6C] hover:shadow-xl"
+              <div
+                key={index}
+                className="group rounded-[20px] border border-[#F4B321] bg-white/70 p-10 backdrop-blur-lg transition-all duration-300 "
               >
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-[#F4B321]">
-                  <Icon size={28} className="text-[#0F7B6C] group-hover:text-white" />
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white transition-colors duration-300">
+                  <Icon
+                    size={28}
+                    className="text-[#F4B321]"
+                  />
                 </div>
-                <h3 className="text-[24px] font-bold text-[#183534] mb-4 transition-colors duration-300 group-hover:text-white">
+
+                <h3 className="mb-4 text-[24px] font-bold text-[#183534] transition-colors duration-300">
                   {model.title}
                 </h3>
-                <p className="text-[16px] text-[#6E7676] leading-[1.7] transition-colors duration-300 group-hover:text-white/80">
+
+                <p className="text-[16px] leading-[1.7] text-[#6E7676] transition-colors duration-300">
                   {model.description}
                 </p>
               </div>
