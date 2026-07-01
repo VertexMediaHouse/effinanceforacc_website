@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "@fontsource/anton";
 
 const items = [
   "Marketing Agency",
