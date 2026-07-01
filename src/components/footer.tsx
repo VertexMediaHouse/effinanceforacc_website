@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <>
@@ -47,26 +49,34 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <a href="/" className="transition-colors hover:text-white">
-                      Home
-                    </a>
+                    <Link href="/" passHref>
+                      <a className="transition-colors hover:text-white">
+                        Home
+                      </a>
+                    </Link>
                   </li>
                   <li>
                   </li>
                   <li>
-                    <a href="/services" className="transition-colors hover:text-white">
-                      Services
-                    </a>
+                    <Link href="/services" passHref>
+                      <a className="transition-colors hover:text-white">
+                        Services
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/industries" className="transition-colors hover:text-white">
-                      Industries
-                    </a>
+                    <Link href="/industries" passHref>
+                      <a className="transition-colors hover:text-white">
+                        Industries
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/engagement-model" className="transition-colors hover:text-white">
-                      Engagement Model
-                    </a>
+                    <Link href="/engagement-model" passHref>
+                      <a className="transition-colors hover:text-white">
+                        Engagement Model
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -77,29 +87,39 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <a href="/features" className="transition-colors hover:text-white">
-                      What's Included
-                    </a>
+                    <Link href="/features" passHref>
+                       <a className="transition-colors hover:text-white">
+                         What's Included
+                       </a>
+                     </Link>
                   </li>
                   <li>
-                    <a href="/consulting" className="transition-colors hover:text-white">
-                      Consulting
-                    </a>
+                    <Link href="/consulting" passHref>
+                       <a className="transition-colors hover:text-white">
+                         Consulting
+                       </a>
+                     </Link>
                   </li>
                   <li>
-                    <a href="/how-it-works" className="transition-colors hover:text-white">
-                      How It Works
-                    </a>
+                    <Link href="/how-it-works" passHref>
+                       <a className="transition-colors hover:text-white">
+                         How It Works
+                       </a>
+                     </Link>
                   </li>
                   <li>
-                    <a href="/about" className="transition-colors hover:text-white">
-                      About Us
-                    </a>
+                    <Link href="/about" passHref>
+                       <a className="transition-colors hover:text-white">
+                         About Us
+                       </a>
+                     </Link>
                   </li>
                   <li>
-                    <a href="/contact" className="transition-colors hover:text-white">
-                      Contact
-                    </a>
+                    <Link href="/contact" passHref>
+                       <a className="transition-colors hover:text-white">
+                         Contact
+                       </a>
+                     </Link>
                   </li>
                 </ul>
               </div>

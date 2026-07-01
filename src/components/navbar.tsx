@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/", hasDropdown: false, active: true },
@@ -55,7 +56,7 @@ export default function Navbar() {
       <div className="bg-white">
         <div className="mx-20 flex h-20 max-w-8xl items-center justify-between px-6 lg:px-8">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <img
               src="assets/logo.png"
               alt="logo"
@@ -64,14 +65,14 @@ export default function Navbar() {
             <span className="text-2xl font-bold text-gray-900">
               Effinanceforacc
             </span>
-          </a>
+          </Link>
 
           {/* Right Section */}
           <div className="hidden lg:flex items-center gap-10 ml-auto">
             {/* Desktop Nav */}
             <nav className="flex items-center gap-8">
               {NAV_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className={`flex items-center gap-1 text-[16px] transition-colors hover:text-[#392f83] ${item.active
@@ -83,12 +84,12 @@ export default function Navbar() {
                   {item.hasDropdown && (
                     <ChevronDown className="h-4 w-4" strokeWidth={2} />
                   )}
-                </a>
+                </Link>
               ))}
             </nav>
 
             {/* CTA */}
-            <a
+            <Link
               href="#"
               className="group flex items-center gap-3 rounded-md border border-[#392f83] py-2 pl-6 pr-2 text-[15px] font-semibold text-[#392f83] transition-all hover:bg-[#392f83] hover:text-white"
             >
@@ -97,7 +98,7 @@ export default function Navbar() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#392f83] text-white transition-colors group-hover:bg-white group-hover:text-[#392f83]">
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu toggle */}
@@ -119,19 +120,14 @@ export default function Navbar() {
           <div className="border-t border-gray-100 px-6 py-5 lg:hidden">
             <nav className="flex flex-col gap-4">
               {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className={`flex items-center justify-between text-[16px] ${item.active
-                    ? "font-semibold text-gray-900"
-                    : "font-medium text-gray-600"
-                    }`}
-                >
-                  {item.label}
-                  {item.hasDropdown && (
-                    <ChevronDown className="h-4 w-4" strokeWidth={2} />
-                  )}
-                </a>
+                <Link href={item.href} key={item.label}>
+                  <a className={`flex items-center justify-between text-[16px] ${item.active ? "font-semibold text-gray-900" : "font-medium text-gray-600"}`}>
+                    {item.label}
+                    {item.hasDropdown && (
+                      <ChevronDown className="h-4 w-4" strokeWidth={2} />
+                    )}
+                  </a>
+                </Link>
               ))}
             </nav>
 
