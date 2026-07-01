@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/", hasDropdown: false, active: true },
@@ -56,7 +56,7 @@ export default function Navbar() {
       <div className="bg-white">
         <div className="mx-20 flex h-20 max-w-8xl items-center justify-between px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img
               src="assets/logo.png"
               alt="logo"
@@ -74,7 +74,7 @@ export default function Navbar() {
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className={`flex items-center gap-1 text-[16px] transition-colors hover:text-[#392f83] ${item.active
                     ? "font-semibold text-gray-900"
                     : "font-medium text-gray-600"
@@ -90,7 +90,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <Link
-              href="#"
+              to="#"
               className="group flex items-center gap-3 rounded-md border border-[#392f83] py-2 pl-6 pr-2 text-[15px] font-semibold text-[#392f83] transition-all hover:bg-[#392f83] hover:text-white"
             >
               Free Consultation
@@ -120,7 +120,7 @@ export default function Navbar() {
           <div className="border-t border-gray-100 px-6 py-5 lg:hidden">
             <nav className="flex flex-col gap-4">
               {NAV_ITEMS.map((item) => (
-                <Link href={item.href} key={item.label}>
+                <Link to={item.href} key={item.label}>
                   <a className={`flex items-center justify-between text-[16px] ${item.active ? "font-semibold text-gray-900" : "font-medium text-gray-600"}`}>
                     {item.label}
                     {item.hasDropdown && (

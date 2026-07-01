@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,19 +27,30 @@ export default function Footer() {
                 </a>
               </div>
 
-              <p className="mb-6 text-md leading-7 text-white/60">
-                Middlest 2 East 42nd Streearket
-                <br />
-                place New York, NY 10017
-              </p>
+              <div>
+                <div className="mb-6 flex items-start gap-3 text-white/60">
+                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                  <p className="text-md leading-7">
+                    Middlest 2 East 42nd Streearket
+                    <br />
+                    place New York, NY 10017
+                  </p>
+                </div>
 
-              <h4 className="mb-3 text-lg font-bold text-white">
-                123(55)-90067990
-              </h4>
+                <div className="mb-4 flex items-center gap-3 text-white/60">
+                  <Phone className="h-5 w-5 shrink-0 text-primary" />
+                  <h4 className="text-lg font-bold">
+                    123(55)-90067990
+                  </h4>
+                </div>
 
-              <p className="text-md text-white/60">
-                info@example.com
-              </p>
+                <div className="flex items-center gap-3 text-white/60">
+                  <Mail className="h-5 w-5 shrink-0 text-primary" />
+                  <p className="text-md">
+                    info@example.com
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Right - Remaining Columns */}
@@ -49,7 +61,7 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <Link href="/" passHref>
+                    <Link to="/" >
                       <a className="transition-colors hover:text-white">
                         Home
                       </a>
@@ -58,21 +70,21 @@ export default function Footer() {
                   <li>
                   </li>
                   <li>
-                    <Link href="/services" passHref>
+                    <Link to="/services" >
                       <a className="transition-colors hover:text-white">
                         Services
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/industries" passHref>
+                    <Link to="/industries" >
                       <a className="transition-colors hover:text-white">
                         Industries
                       </a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/engagement-model" passHref>
+                    <Link to="/engagement-model" >
                       <a className="transition-colors hover:text-white">
                         Engagement Model
                       </a>
@@ -87,39 +99,39 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <Link href="/features" passHref>
-                       <a className="transition-colors hover:text-white">
-                         What's Included
-                       </a>
-                     </Link>
+                    <Link to="/features" >
+                      <a className="transition-colors hover:text-white">
+                        What's Included
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/consulting" passHref>
-                       <a className="transition-colors hover:text-white">
-                         Consulting
-                       </a>
-                     </Link>
+                    <Link to="/consulting" >
+                      <a className="transition-colors hover:text-white">
+                        Consulting
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/how-it-works" passHref>
-                       <a className="transition-colors hover:text-white">
-                         How It Works
-                       </a>
-                     </Link>
+                    <Link to="/how-it-works" >
+                      <a className="transition-colors hover:text-white">
+                        How It Works
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/about" passHref>
-                       <a className="transition-colors hover:text-white">
-                         About Us
-                       </a>
-                     </Link>
+                    <Link to="/about" >
+                      <a className="transition-colors hover:text-white">
+                        About Us
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/contact" passHref>
-                       <a className="transition-colors hover:text-white">
-                         Contact
-                       </a>
-                     </Link>
+                    <Link to="/contact" >
+                      <a className="transition-colors hover:text-white">
+                        Contact
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -150,15 +162,15 @@ export default function Footer() {
           {/* Copyright */}
           <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-white md:flex-row">
             <p>
-              © 2026 Finwave by RadiusTheme. All rights reserved.
+              © 2026 Effianace. All rights reserved.
             </p>
 
             <p>
               Made with ❤️ by{" "}
               <span className="font-semibold text-[#cd753a]">
-                <a href="https://vertexmediahouse.com" target="_blank">
+                <Link to ="https://vertexmediahouse.com" target="_blank">
                   Vertex Media House
-                </a>
+                </Link>
               </span>
             </p>
           </div>
