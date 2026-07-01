@@ -1,11 +1,10 @@
 export default function Marquee() {
   const logos = [
-    "Syncrely",
-    "DevWise",
-    "Proline",
-    "Knight Frank",
-    "Vertex",
-    "FinancePro",
+    "/assets/logo1.png",
+    "/assets/logo2.png",
+    "/assets/logo3.png",
+    "/assets/logo4.png",
+    "/assets/logo5.png",
   ];
 
   return (
@@ -47,12 +46,16 @@ export default function Marquee() {
             {[...logos, ...logos].map((logo, i) => (
               <div
                 key={i}
-                className="text-xl font-bold whitespace-nowrap opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:-rotate-6 cursor-pointer"
+                className="flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110 hover:-rotate-6 cursor-pointer"
                 style={{
                   transform: "perspective(1000px) rotateY(-18deg)",
                 }}
               >
-                {logo}
+                <img
+                  src={logo}
+                  alt={`logo-${i}`}
+                  className="h-10 w-auto object-contain"
+                />
               </div>
             ))}
           </div>
