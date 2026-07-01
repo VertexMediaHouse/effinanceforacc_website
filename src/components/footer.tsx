@@ -9,7 +9,7 @@ export default function Footer() {
             {/* Left - Contact */}
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <a href="#" className="flex items-center gap-2">
+                <a href="/" className="flex items-center gap-2">
                   <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-white shadow-lg">
                     <img
                       src="assets/logo.png"
@@ -41,17 +41,33 @@ export default function Footer() {
 
             {/* Right - Remaining Columns */}
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-0 mr-6 sm:divide-x sm:divide-white/10">
-
               {/* Company */}
               <div className="sm:px-8">
                 <h3 className="mb-8 text-xl font-bold text-white">Company</h3>
 
                 <ul className="space-y-4 text-white/60">
-                  <li><a href="#" className="transition-colors hover:text-white">About Us</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Service</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Project</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Blog</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Contact</a></li>
+                  <li>
+                    <a href="/" className="transition-colors hover:text-white">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                    <a href="/services" className="transition-colors hover:text-white">
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/industries" className="transition-colors hover:text-white">
+                      Industries
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/engagement-model" className="transition-colors hover:text-white">
+                      Engagement Model
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -60,11 +76,31 @@ export default function Footer() {
                 <h3 className="mb-8 text-xl font-bold text-white">Features</h3>
 
                 <ul className="space-y-4 text-white/60">
-                  <li><a href="#" className="transition-colors hover:text-white">What's Included</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Consulting</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">How It Works</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">About Us</a></li>
-                  <li><a href="#" className="transition-colors hover:text-white">Contact</a></li>
+                  <li>
+                    <a href="/features" className="transition-colors hover:text-white">
+                      What's Included
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/consulting" className="transition-colors hover:text-white">
+                      Consulting
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/how-it-works" className="transition-colors hover:text-white">
+                      How It Works
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/about" className="transition-colors hover:text-white">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" className="transition-colors hover:text-white">
+                      Contact
+                    </a>
+                  </li>
                 </ul>
               </div>
 

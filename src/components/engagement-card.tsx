@@ -2,40 +2,50 @@ export default function EngagementCard() {
     const engagements = [
         {
             number: "01",
-            title: "Full Time Engagement",
-            subheader: "Dedicated, embedded support",
+            title: "Monthly Accounting",
+            subheader: "Ongoing financial support",
             description:
-                "A dedicated commitment where we work as an extension of your team, fully embedded in your day-to-day financial operations and long-term strategy.",
+                "Comprehensive monthly accounting services designed to keep your books accurate, your finances organized, and your business compliant year-round.",
             points: [
-                "Full-time weekly commitment",
-                "Direct access & priority response",
-                "Ideal for ongoing, complex needs",
+                "Bookkeeping & reconciliations",
+                "Payroll & financial reporting",
+                "Dedicated accounting support",
             ],
         },
         {
             number: "02",
-            title: "Hourly",
-            subheader: "Depending upon scope of work",
+            title: "Project Services",
+            subheader: "One-time accounting projects",
             description:
-                "Flexible, pay-as-you-go support scaled to the size and complexity of your project — perfect for focused engagements and shorter-term needs.",
+                "Need help with a specific financial task? We deliver expert support for cleanup projects, tax preparation, system setup, and financial consulting.",
             points: [
-                "Billed by hours worked",
-                "Scales with project scope",
-                "Ideal for defined, one-off needs",
+                "Bookkeeping cleanup",
+                "Tax planning & compliance",
+                "Financial consulting",
             ],
         },
     ];
 
     return (
-        <section className="py-[90px] bg-[#f7f1eb]">
-            <div className="max-w-[1280px] mx-auto px-6">
-                <div className="mb-12 px-8">
-                    <span className="mb-3 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
-                        Engagement Models
-                    </span>
-                    <h2 className="max-w-[660px] text-[36px] font-bold leading-[1.1] text-[#1a1630]">
-                        Ways We Can <br /> Work Together
-                    </h2>
+        <section className="py-24 bg-[#f7f1eb]">
+            <div className="max-w-[1280px] mx-20 px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="mb-12 px-8">
+                        <span className="mb-3 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+                            SERVICE PLANS
+                        </span>
+
+                        <h2 className="max-w-[660px] text-[36px] font-bold leading-[1.1] text-[#1a1630]">
+                            Choose Your
+                            <br />
+                            Service Plan
+                        </h2>
+                    </div>
+                    <div className="mb-12 px-8 flex items-end">
+                        <p className="mt-5 max-w-[520px] text-[18px] leading-7 text-[#6b6480]">
+                            Flexible accounting services designed to match your business needs and growth goals.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 px-8">
@@ -95,10 +105,12 @@ export default function EngagementCard() {
                             >
                                 Get Started
                             </button>
+
                         </div>
                     ))}
                 </div>
+
             </div>
-        </section>
+        </section >
     );
 }

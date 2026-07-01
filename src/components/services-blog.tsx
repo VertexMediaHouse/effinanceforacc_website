@@ -1,19 +1,24 @@
 export default function ServicesBlog() {
   const blogs = [
     {
-      tag: "Finance Advisor",
-      title: "Finance Cover A Moving Experience Like No Other",
+      tag: "Bookkeeping",
+      title: "5 Signs Your Business Needs Professional Bookkeeping",
       date: "January 12, 2025",
+image: "https://plus.unsplash.com/premium_photo-1678567671940-64eeefe22e5b?auto=format&fit=crop&q=80&w=600",
+imageKeyword: "accountant bookkeeping records office desk",
     },
     {
-      tag: "Investment",
-      title: "Get Rid Of Manual Tracking Spreadsheets Finance",
+      tag: "Tax Planning",
+      title: "Year-End Tax Planning Tips for Small Businesses",
       date: "February 05, 2025",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=600",
+      imageKeyword: "tax planning documents calculator desk",
     },
     {
-      tag: "Tax Consultancy",
-      title: "Iscover A Moving Experience Like No Other Finwave",
+      tag: "Financial Strategy",
+      title: "How Outsourced Accounting Helps Businesses Scale Faster",
       date: "March 18, 2025",
+image: "https://plus.unsplash.com/premium_photo-1661326350444-8d0e57e4cdad?auto=format&fit=crop&q=80&w=600",      imageKeyword: "business growth financial strategy planning",
     },
   ];
 
@@ -22,18 +27,19 @@ export default function ServicesBlog() {
       <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
         <div>
           <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
-            Why Choose Us
+            Our Blog
           </span>
 
           <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
-            Financial Solutions <br /> That Help Your Business Grow
+            Insights & Updates <br /> From Our Finance Experts
           </h2>
         </div>
 
         <div className="flex items-end lg:justify-end">
           <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
-            Reliable bookkeeping, accurate reporting, and dedicated financial support
-            for US businesses and accounting firms.
+            Practical tips, industry updates, and expert advice on
+            bookkeeping, tax, and financial management for US and
+            international businesses.
           </p>
         </div>
       </div>
@@ -44,20 +50,12 @@ export default function ServicesBlog() {
             key={i}
             className="rounded-[14px] overflow-hidden text-left border border-[#e5e7eb]"
           >
-            <div className="w-full h-[200px] bg-[#eef5f4] flex items-center justify-center overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-[#e8f5f2] to-[#d4ede8] flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="w-[48px] h-[48px] text-[#1a7a65] opacity-40"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </div>
+            <div className="w-full h-[200px] overflow-hidden">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="p-[22px]">
               <span className="inline-block text-[11px] font-semibold text-[#ffffff] bg-[#382f82] px-[10px] py-[3px] rounded-[4px] mb-[12px]">
@@ -97,8 +95,8 @@ export default function ServicesBlog() {
                 </span>
               </div>
               <p className="text-[13px] text-[#6b7280] leading-[1.65]">
-                Finance cover a moving experience like no other at Outgrid merely
-                transporting items get rid of manual tracking.
+                Stay up to date with expert insights on accounting best
+                practices, tax strategies, and financial planning tips.
               </p>
             </div>
           </div>

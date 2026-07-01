@@ -3,28 +3,32 @@ import { useState } from "react";
 export default function IndustryWeServe() {
   const projects = [
     {
-      category: "Finance Audit",
-      title: "Strategic planning execution",
+      category: "E-Commerce & Retail",
+      title: "Bookkeeping & inventory accounting for online sellers",
       image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+        "/assets/industry-1.jpg", // replace via Mangific
+      imageKeyword: "ecommerce warehouse accounting online business",
     },
     {
-      category: "Leadership",
-      title: "Leadership executive coaching",
+      category: "IT & SaaS",
+      title: "Financial reporting for tech and software companies",
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978",
+        "/assets/industry-2.jpg",
+      imageKeyword: "software team office finance meeting",
     },
     {
-      category: "Business Growth",
-      title: "Empowered leadership journey",
+      category: "Startups & Small Business",
+      title: "Scalable accounting support for growing businesses",
       image:
-        "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+        "/assets/industry-3.png",
+      imageKeyword: "startup founders discussing growth strategy",
     },
     {
-      category: "Consulting",
-      title: "Solution for each & every challenges",
+      category: "US & Offshore Clients",
+      title: "Cross-border tax and compliance solutions",
       image:
-        "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
+        "/assets/industry-4.jpg",
+      imageKeyword: "international business finance global consulting",
     },
   ];
 
@@ -37,19 +41,20 @@ export default function IndustryWeServe() {
         <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <span className="mb-2 block text-xs font-bold uppercase tracking-[1.5px] text-[#885b67]">
-              Industry we serve
+              Industries We Serve
             </span>
 
             <h2 className="mb-3 text-4xl font-bold leading-tight text-[#1a1630]">
-              Our Stories of Financial Achievement
+              Trusted Accounting & Finance Solutions
             </h2>
 
             <p className="max-w-3xl text-sm leading-7 text-[#6b6480]">
-              Discover a moving experience like no other at Outgrid. We go
-              beyond merely transporting items.
+              Effinanceforacc partners with businesses across the US and
+              abroad to simplify accounting, ensure compliance, and drive
+              financial clarity.
               <br />
-              Get rid of manual tracking spreadsheets, and get an accurate
-              view.
+              Say goodbye to manual spreadsheets — get accurate, real-time
+              financial insight.
             </p>
           </div>
 
@@ -60,7 +65,7 @@ export default function IndustryWeServe() {
                 "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
             }}
           >
-            Take Our Services
+            Explore Our Services
             <svg
               width="18"
               height="18"
@@ -125,7 +130,7 @@ export default function IndustryWeServe() {
                 key={activeIndex}
                 src={projects[activeIndex].image}
                 alt={projects[activeIndex].title}
-                className="h-[430px] w-full rounded-xl object-cover transition-all duration-500"
+                className="h-[500px] w-full rounded-xl object-cover transition-all duration-500"
               />
 
               <div className="absolute bottom-4 left-4 right-4">

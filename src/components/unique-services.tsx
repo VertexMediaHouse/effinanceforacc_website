@@ -15,7 +15,7 @@ const servicesData = [
     description: "Maintain flawless financial records with our comprehensive accounting and bookkeeping services. We ensure your ledgers are always up-to-date, accurate, and compliant with all regulations.",
     icon: Calculator,
     color: "#e65c00",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600" // keyword: bookkeeping accountant working on ledger
   },
   {
     id: "ap-ar",
@@ -23,7 +23,7 @@ const servicesData = [
     description: "Optimize your cash flow. We manage your invoices, track outstanding payments, and ensure your bills are paid on time, giving you complete visibility into your working capital.",
     icon: ArrowRightLeft,
     color: "#f38c24",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600" // keyword: invoice payment processing office desk
   },
   {
     id: "statements",
@@ -31,7 +31,7 @@ const servicesData = [
     description: "Gain deep insights into your business performance. We prepare accurate, timely financial statements including balance sheets, income statements, and cash flow reports.",
     icon: FileSpreadsheet,
     color: "#a35765",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1579532582937-16c108930bf6?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "cfo",
@@ -39,15 +39,15 @@ const servicesData = [
     description: "Get executive-level financial strategy without the full-time cost. Our virtual CFOs provide high-level forecasting, strategy formulation, and financial leadership to drive growth.",
     icon: Briefcase,
     color: "#884c76",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600" // keyword: cfo executive strategy meeting finance
   },
   {
     id: "tax",
-    title: "Tax Preparation Planning",
-    description: "Minimize your tax liability with proactive planning. We navigate complex tax codes to ensure compliance while maximizing your deductions and keeping more of your hard-earned revenue.",
+    title: "Tax Preparation & Planning",
+    description: "Minimize your tax liability with proactive planning. We navigate complex US and international tax codes to ensure compliance while maximizing your deductions and keeping more of your hard-earned revenue.",
     icon: FileSignature,
     color: "#e65c00",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "budgeting",
@@ -55,7 +55,7 @@ const servicesData = [
     description: "Look into the future of your finances. We build robust budgets and predictive models that help you plan for expansion, manage risks, and make informed strategic decisions.",
     icon: TrendingUp,
     color: "#f38c24",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" // keyword: budget forecast chart planning finance
   }
 ];
 
@@ -98,9 +98,13 @@ export default function UniqueServices() {
               What We Do
             </span>
             <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
-              Comprehensive Financial Solutions
+              Comprehensive Accounting & Financial Solutions
             </h2>
           </div>
+          <p className="mt-4 max-w-[600px] text-base leading-7 text-[#6b6480]">
+            Effinanceforacc delivers end-to-end accounting and financial
+            support for US-based and international businesses alike.
+          </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-16 relative">
@@ -161,10 +165,9 @@ export default function UniqueServices() {
                 <div
                   key={service.id}
                   data-index={index}
-                  // Increased padding from py-16 to py-24 to increase right card height by 15%+
                   className={`service-section py-24 px-4 lg:px-8 rounded-2xl transition-all duration-500 flex flex-col justify-center origin-top ${isActive
-                      ? 'opacity-100 bg-white shadow-xl shadow-orange-900/5 scale-[1.01] border border-orange-100/50'
-                      : 'opacity-40 lg:opacity-30 scale-100'
+                    ? 'opacity-100 bg-white shadow-xl shadow-orange-900/5 scale-[1.01] border border-orange-100/50'
+                    : 'opacity-40 lg:opacity-30 scale-100'
                     }`}
                 >
                   {/* Mobile-only visual layout */}
@@ -197,8 +200,8 @@ export default function UniqueServices() {
                         Explore This Service
                       </span>
                       <div className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 ${isActive
-                          ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white border-transparent shadow-sm'
-                          : 'bg-white border-slate-200 group-hover:border-[#f38c24] text-slate-700'
+                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white border-transparent shadow-sm'
+                        : 'bg-white border-slate-200 group-hover:border-[#f38c24] text-slate-700'
                         }`}>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
                           <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />

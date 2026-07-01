@@ -55,7 +55,7 @@ export default function Navbar() {
       <div className="bg-white">
         <div className="mx-20 flex h-20 max-w-8xl items-center justify-between px-6 lg:px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img
               src="assets/logo.png"
               alt="logo"

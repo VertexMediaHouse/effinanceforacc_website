@@ -8,9 +8,9 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What services do you offer?",
+    question: "What services does Effinanceforacc offer?",
     answer:
-      "We provide comprehensive bookkeeping, accounting, payroll, tax preparation, financial reporting, and back-office support for US businesses and accounting firms.",
+      "We provide comprehensive bookkeeping, accounting, payroll, tax preparation, financial reporting, and back-office support for US-based and foreign businesses and accounting firms.",
   },
   {
     question: "How does the onboarding process work?",
@@ -20,7 +20,7 @@ const faqData: FAQItem[] = [
   {
     question: "What pricing models are available?",
     answer:
-      "Choose from flat monthly pricing, transaction-based plans, or customized packages based on your firm's size and bookkeeping requirements.",
+      "Choose from flat monthly pricing, transaction-based plans, or customized packages based on your business size and bookkeeping requirements.",
   },
   {
     question: "How secure is my data?",
@@ -30,10 +30,10 @@ const faqData: FAQItem[] = [
   {
     question: "Do you support multiple currencies?",
     answer:
-      "Yes. We manage multi-currency bookkeeping and reconciliation while maintaining accurate exchange rate records.",
+      "Yes. We manage multi-currency bookkeeping and reconciliation for international clients while maintaining accurate exchange rate records.",
   },
   {
-    question: "Can I integrate with my existing ERP?",
+    question: "Can I integrate with my existing accounting software?",
     answer:
       "Absolutely. We work with QuickBooks, Xero, NetSuite, Zoho Books, Sage, and many other accounting and ERP platforms.",
   },
@@ -64,8 +64,9 @@ export default function FAQ() {
 
           <div className="flex items-end lg:justify-end">
             <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
-              Find answers to the most common questions about our bookkeeping,
-              accounting, onboarding process, pricing, and ongoing support.
+              Find answers to the most common questions about Effinanceforacc's
+              bookkeeping, accounting, onboarding process, pricing, and
+              ongoing support.
             </p>
           </div>
         </div>
