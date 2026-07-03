@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Industries from './pages/Industries';
 import EngagementModel from './pages/EngagementModel';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/engagement-model" element={<EngagementModel />} />
       </Routes>
+        <Chatbot />
     </BrowserRouter>
   );
 }
