@@ -66,7 +66,7 @@ const bubbleStyle: CSSProperties = {
     width: '64px',
     height: '64px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #1a1a4d, #e8955a)',
+    background: "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
     boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
     cursor: 'pointer',
     display: 'flex',
