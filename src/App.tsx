@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Industries from './pages/Industries';
 import EngagementModel from './pages/EngagementModel';
-import Chatbot from './components/Chatbot';
+import Chatbot from './components/chatbot';
 
 function App() {
   return (
