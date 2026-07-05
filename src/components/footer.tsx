@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { HashLinkConditional } from "./HashLinkConditional";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -61,34 +62,33 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <Link to="/" >
+                    <RouterLink to="/" >
                       <a className="transition-colors hover:text-white">
                         Home
                       </a>
-                    </Link>
+                    </RouterLink>
                   </li>
+                  {/* Placeholder for potential future link */}
                   <li>
-                  </li>
-                  <li>
-                    <Link to="/services" >
+                    <RouterLink to="/services" >
                       <a className="transition-colors hover:text-white">
                         Services
                       </a>
-                    </Link>
+                    </RouterLink>
                   </li>
                   <li>
-                    <Link to="/industries" >
+                    <RouterLink to="/industries" >
                       <a className="transition-colors hover:text-white">
                         Industries
                       </a>
-                    </Link>
+                    </RouterLink>
                   </li>
                   <li>
-                    <Link to="/engagement-model" >
+                    <RouterLink to="/engagement-model" >
                       <a className="transition-colors hover:text-white">
                         Engagement Model
                       </a>
-                    </Link>
+                    </RouterLink>
                   </li>
                 </ul>
               </div>
@@ -99,39 +99,29 @@ export default function Footer() {
 
                 <ul className="space-y-4 text-white/60">
                   <li>
-                    <Link to="/features" >
-                      <a className="transition-colors hover:text-white">
-                        What's Included
-                      </a>
-                    </Link>
+                    <HashLinkConditional to="#Services" className="transition-colors hover:text-white">
+                      Our services
+                    </HashLinkConditional>
                   </li>
                   <li>
-                    <Link to="/consulting" >
-                      <a className="transition-colors hover:text-white">
-                        Consulting
-                      </a>
-                    </Link>
+                    <HashLinkConditional to="#Reviews" className="transition-colors hover:text-white">
+                      Reviews
+                    </HashLinkConditional>
                   </li>
                   <li>
-                    <Link to="/how-it-works" >
-                      <a className="transition-colors hover:text-white">
-                        How It Works
-                      </a>
-                    </Link>
+                    <HashLinkConditional to="#WhyChooseUs" className="transition-colors hover:text-white">
+                      Why Choose us
+                    </HashLinkConditional>
                   </li>
                   <li>
-                    <Link to="/about" >
-                      <a className="transition-colors hover:text-white">
-                        About Us
-                      </a>
-                    </Link>
+                    <HashLinkConditional to="#Case-studies" className="transition-colors hover:text-white">
+                      Case Studies
+                    </HashLinkConditional>
                   </li>
                   <li>
-                    <Link to="/contact" >
-                      <a className="transition-colors hover:text-white">
-                        Contact
-                      </a>
-                    </Link>
+                    <HashLinkConditional to="#Blogs" className="transition-colors hover:text-white">
+                      Blogs
+                    </HashLinkConditional>
                   </li>
                 </ul>
               </div>
@@ -162,15 +152,15 @@ export default function Footer() {
           {/* Copyright */}
           <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-white md:flex-row">
             <p>
-              © 2026 Effianace. All rights reserved.
+              © 2026 Effianaceforacc. All rights reserved.
             </p>
 
             <p>
               Made with ❤️ by{" "}
               <span className="font-semibold text-[#cd753a]">
-                <Link to ="https://vertexmediahouse.com" target="_blank">
+                <a href="https://vertexmediahouse.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
                   Vertex Media House
-                </Link>
+                </a>
               </span>
             </p>
           </div>

@@ -23,7 +23,7 @@ image: "https://plus.unsplash.com/premium_photo-1661326350444-8d0e57e4cdad?auto=
   ];
 
   return (
-    <section className="bg-white py-24 mx-24 text-left">
+    <section className="bg-white py-24 mx-24 text-left" id="Blogs">
       <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
         <div>
           <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">

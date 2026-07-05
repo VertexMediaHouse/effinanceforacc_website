@@ -14,7 +14,7 @@ function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/engagement-model" element={<EngagementModel />} />
       </Routes>
-        <Chatbot />
+      <Chatbot />
     </BrowserRouter>
   );
 }

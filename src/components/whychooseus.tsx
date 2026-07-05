@@ -43,7 +43,7 @@ const services = [
 ];
 
   return (
-    <section className="overflow-hidden bg-white py-24">
+    <section className="overflow-hidden bg-white py-24" id="WhyChooseUs">
       <div className="mx-auto max-w-[1400px] px-6">
         {/* Header */}
         <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">

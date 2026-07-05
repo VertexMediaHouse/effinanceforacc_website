@@ -25,7 +25,7 @@ export default function Testimonial() {
     ];
 
     return (
-        <section className="w-full bg-[#FDF8F4] py-20">
+        <section className="w-full bg-[#FDF8F4] py-20" id="Reviews">
             <div className="mx-auto max-w-7xl px-2">
                 <div className="grid gap-8 lg:grid-cols-[380px_1fr]">
                     {/* Left Content */}

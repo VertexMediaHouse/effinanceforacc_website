@@ -20,7 +20,6 @@ export default function Home() {
       <AboutServices />
       <Whychooseus/>
       <IndustryWeServe/>
-      {/* <MarqueeSlider /> */}
       <DifferentiatorCTA/>
       <Testimonial />
       <FAQ/>

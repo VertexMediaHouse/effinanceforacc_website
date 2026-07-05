@@ -61,7 +61,7 @@ function CornerShape() {
 
 export default function AboutServices() {
   return (
-    <section className="bg-surface py-24">
+    <section className="bg-surface py-24" id="Services">
       <div className="mx-auto max-w-7xl px-2">
         {/* Section Header */}
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">

@@ -16,18 +16,18 @@ export default function Navbar() {
   return (
     <header className="w-full font-sans text-[13px]">
       {/* Top utility bar */}
-      <div className="bg-[#020450] text-white">
+      <div className="bg-[#1a1630] text-white">
         <div className="mx-6 flex h-16 max-w-8xl xl:pl-24 items-center justify-between px-6 lg:px-20">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 divide-x divide-white/40">
             <a
               href="tel:+12377678889"
-              className="flex items-center gap-3 text-base font-medium text-white"
+              className="flex items-center gap-2 text-base font-medium text-white"
             >
               <Phone className="h-5 w-5" strokeWidth={2} />
               <span>Call: +123-7767-8889</span>
             </a>
 
-            <span className="hidden items-center gap-3 text-base sm:flex">
+            <span className="hidden items-center gap-2 text-base sm:flex pl-4">
               <Mail className="h-5 w-5" strokeWidth={2} />
               <span>Mail: info@gmail.com</span>
             </span>
