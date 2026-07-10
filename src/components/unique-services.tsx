@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import {
   Calculator,
-  ArrowRightLeft,
   FileSpreadsheet,
   Briefcase,
   FileSignature,
@@ -12,23 +11,30 @@ const servicesData = [
   {
     id: "accounting",
     title: "Accounting and bookkeeping",
-    description: "Maintain flawless financial records with our comprehensive accounting and bookkeeping services. We ensure your ledgers are always up-to-date, accurate, and compliant with all regulations.",
+    description: "Our professional outsourcing services streamline your financial operations, reduce overhead costs, and ensure absolute compliance.",
+    sectionLabel: "Core Accounting & Bookkeeping Services",
+    bullets: [
+      { label: "Daily Transaction Categorization", detail: "Recording income, expenses, and bank activities accurately." },
+      { label: "Bank & Credit Card Reconciliation", detail: "Matching internal books with bank statements monthly." },
+      { label: "Payroll Processing", detail: "Calculating wages, managing deductions, and filing payroll taxes." },
+      { label: "Tax Compliance Support", detail: "Preparing accurate financial data for seamless year-end tax filing." },
+      { label: "Accounts Payable (AP) Management", detail: "Processing vendor invoices and scheduling timely payments." },
+      { label: "Accounts Receivable (AR) Management", detail: "Issuing client invoices and tracking outstanding balances." },
+    ],
     icon: Calculator,
     color: "#e65c00",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600" // keyword: bookkeeping accountant working on ledger
-  },
-  {
-    id: "ap-ar",
-    title: "Accounts Receivable & Payable",
-    description: "Optimize your cash flow. We manage your invoices, track outstanding payments, and ensure your bills are paid on time, giving you complete visibility into your working capital.",
-    icon: ArrowRightLeft,
-    color: "#f38c24",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600" // keyword: invoice payment processing office desk
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "statements",
     title: "Financial Statement Preparation",
-    description: "Gain deep insights into your business performance. We prepare accurate, timely financial statements including balance sheets, income statements, and cash flow reports.",
+    description: "Properly structured financial statements provide the foundation for smart decisions, compliance, and growth opportunities.",
+    sectionLabel: "Financial Statement Preparation",
+    bullets: [
+      { label: "Tax Readiness", detail: "Properly formatted financial statements integrate seamlessly with your annual tax return preparation." },
+      { label: "Business Valuation", detail: "Structured financials are mandatory if you plan to sell, merge, or value your company." },
+      { label: "Custom Financials", detail: "We also prepare customized financials required for bank loan applications or yearly reporting requirements to bank." },
+    ],
     icon: FileSpreadsheet,
     color: "#a35765",
     image: "https://images.unsplash.com/photo-1579532582937-16c108930bf6?auto=format&fit=crop&q=80&w=600"
@@ -36,26 +42,50 @@ const servicesData = [
   {
     id: "cfo",
     title: "Virtual CFO Services",
-    description: "Get executive-level financial strategy without the full-time cost. Our virtual CFOs provide high-level forecasting, strategy formulation, and financial leadership to drive growth.",
+    description: "Get executive-level financial strategy without the full-time cost. Our virtual CFOs drive growth through data-driven leadership.",
+    sectionLabel: "Virtual CFO Services",
+    bullets: [
+      { label: "Financial Modeling & Forecasting", detail: "Building dynamic projections to predict cash flow runway, revenue targets, and scalability hurdles." },
+      { label: "Cash Flow Optimization", detail: "Implementing working capital management strategies to maximize liquidity and control burn rates." },
+      { label: "Tax Optimization Planning", detail: "Aligning corporate restructuring and investment decisions with proactive tax-minimisation strategies." },
+    ],
     icon: Briefcase,
     color: "#884c76",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600" // keyword: cfo executive strategy meeting finance
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "tax",
-    title: "Tax Preparation & Planning",
-    description: "Minimize your tax liability with proactive planning. We navigate complex US and international tax codes to ensure compliance while maximizing your deductions and keeping more of your hard-earned revenue.",
+    title: "Tax Preparation and Planning",
+    description: "Minimize your tax liability with proactive planning across entity structure, investments, and income strategies.",
+    sectionLabel: "Tax Preparation and Planning",
+    bullets: [
+      { label: "Entity Structuring", detail: "Optimizing business setups (e.g., S-Corp vs. LLC) to lower self-employment taxes." },
+      { label: "Retirement Optimization", detail: "Maximizing pre-tax contributions to 401(k)s, IRAs, or Defined Benefit plans." },
+      { label: "Investment Timing", detail: "Harvesting capital losses to offset capital gains." },
+      { label: "Income Shifting", detail: "Moving income to family members in lower tax brackets." },
+      { label: "Document Review", detail: "Analyzing W-2s, 1099s, K-1s, and receipts." },
+      { label: "Form Execution", detail: "Preparing federal, state, and local tax returns." },
+      { label: "Credit Maximization", detail: "Identifying missed deductions and industry-specific tax credits." },
+    ],
     icon: FileSignature,
     color: "#e65c00",
     image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "budgeting",
-    title: "Budgeting & Forecasting",
-    description: "Look into the future of your finances. We build robust budgets and predictive models that help you plan for expansion, manage risks, and make informed strategic decisions.",
+    title: "Budgeting and Financial Forecasting",
+    description: "Look into the future of your finances with data-driven budgets and predictive models designed for growth.",
+    sectionLabel: "Business Budget Preparation",
+    bullets: [
+      { label: "Annual & Periodic Budgets", detail: "Prepare annual, quarterly, and monthly operating budgets." },
+      { label: "Sales Forecasting", detail: "Estimate future sales based on historical trends, market conditions, and business goals." },
+      { label: "Cash Flow Projections", detail: "Project future cash inflows and outflows." },
+      { label: "Working Capital Improvements", detail: "Recommend working capital improvements." },
+      { label: "Budget vs. Actuals Analysis", detail: "Compare actual financial results with the approved budget." },
+    ],
     icon: TrendingUp,
     color: "#f38c24",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" // keyword: budget forecast chart planning finance
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
   }
 ];
 
@@ -144,7 +174,7 @@ export default function UniqueServices() {
                       <div className="flex gap-2 items-center">
                         <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full"></div>
                         <span className="text-white/80 font-mono tracking-widest text-sm">
-                          0{index + 1} / 06
+                          0{index + 1} / 05
                         </span>
                       </div>
                     </div>
@@ -190,9 +220,27 @@ export default function UniqueServices() {
                     {service.title}
                   </h3>
 
-                  <p className="text-base text-slate-600 leading-relaxed max-w-xl">
+                  {/* <p className="text-sm text-slate-500 leading-relaxed max-w-xl mb-4 italic">
                     {service.description}
-                  </p>
+                  </p> */}
+
+                  {service.sectionLabel && (
+                    <p className="text-xs font-bold uppercase tracking-widest text-[#e65c00] mb-3">
+                      {service.sectionLabel}
+                    </p>
+                  )}
+
+                  <ul className="flex flex-col gap-2 max-w-xl">
+                    {service.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx} className="flex items-start gap-2.5">
+                        <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-orange-500 to-amber-400"></span>
+                        <span className="text-sm text-slate-700 leading-snug">
+                          <span className="font-semibold text-slate-900">{bullet.label}:</span>{" "}
+                          {bullet.detail}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className="mt-8">
                     <button className="flex items-center gap-4 font-bold text-base group text-slate-800">
