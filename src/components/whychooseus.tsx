@@ -9,38 +9,38 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 export default function WhyChooseUs() {
-const services = [
-  {
-    icon: Users,
-    title: "Dedicated Bookkeeping Team",
-    description:
-      "A consistent team handles your books every month, working inside your existing software so nothing gets lost in handoffs.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "GAAP-Aligned Accounting",
-    description:
-      "Every entry and statement follows US GAAP standards, so your books stay audit-ready and CPA-friendly year round.",
-  },
-  {
-    icon: Receipt,
-    title: "Accounts Payable & Receivable",
-    description:
-      "Vendor bills, client invoices, and collections tracked and reconciled on a consistent monthly schedule.",
-  },
-  {
-    icon: CalendarCheck2,
-    title: "Month-End Close Process",
-    description:
-      "A structured close cycle delivers accurate, finalized financial statements on time, every single month.",
-  },
-  {
-    icon: Building2,
-    title: "Built for US Accounting Firms",
-    description:
-      "We work as a back-office extension for accounting firms managing multiple clients, scaling capacity without scaling headcount.",
-  },
-];
+  const services = [
+    {
+      icon: Users,
+      title: "Dedicated Bookkeeping Team",
+      description:
+        "A consistent team handles your books every month, working inside your existing software so nothing gets lost in handoffs.",
+    },
+    {
+      icon: BadgeCheck,
+      title: "GAAP-Aligned Accounting",
+      description:
+        "Every entry and statement follows US GAAP standards, so your books stay audit-ready and CPA-friendly year round.",
+    },
+    {
+      icon: Receipt,
+      title: "Accounts Payable & Receivable",
+      description:
+        "Vendor bills, client invoices, and collections tracked and reconciled on a consistent monthly schedule.",
+    },
+    {
+      icon: CalendarCheck2,
+      title: "Month-End Close Process",
+      description:
+        "A structured close cycle delivers accurate, finalized financial statements on time, every single month.",
+    },
+    {
+      icon: Building2,
+      title: "Built for US Accounting Firms",
+      description:
+        "We work as a back-office extension for accounting firms managing multiple clients, scaling capacity without scaling headcount.",
+    },
+  ];
 
   return (
     <section className="overflow-hidden bg-white py-24" id="WhyChooseUs">

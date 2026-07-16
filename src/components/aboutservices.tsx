@@ -1,7 +1,6 @@
 import TiltedCard from "./TiltedCard";
 import {
   ShieldCheck,
-  FileText,
   BarChart3,
   Wallet,
   Landmark,
@@ -95,8 +94,8 @@ export default function AboutServices() {
                 overlayContent={
                   <div className="relative h-full w-full overflow-hidden rounded-[24px] border border-[#ece6f3] bg-white p-8 shadow-[0_10px_35px_rgba(20,20,43,0.08)] transition-all duration-300 group-hover:border-[#cd753a]/30 group-hover:shadow-[0_20px_50px_rgba(20,20,43,0.12)] pointer-events-auto">
                     {/* CONTENT */}
-<div className="relative z-10 flex h-full flex-col">
-                        <div className="mb-4 flex items-center justify-between">
+                    <div className="relative z-10 flex h-full flex-col">
+                      <div className="mb-4 flex items-center justify-between">
                         <h3 className="text-lg font-bold text-[#2a2456] transition-colors duration-300 group-hover:text-white">
                           {item.title}
                         </h3>
@@ -106,11 +105,11 @@ export default function AboutServices() {
                         </div>
                       </div>
 
- <p className="flex-1 text-[14px] leading-6 text-[#5e5675] transition-colors duration-300 group-hover:text-white/80">
-  {item.desc}
-</p>
+                      <p className="flex-1 text-[14px] leading-6 text-[#5e5675] transition-colors duration-300 group-hover:text-white/80">
+                        {item.desc}
+                      </p>
 
-<div className="mt-6 pt-4">
+                      <div className="mt-6 pt-4">
                         <button
                           className="group/btn inline-flex items-center gap-3 text-sm font-semibold text-[#cd753a] transition-all duration-300 hover:text-[#b95d20]"
                         >

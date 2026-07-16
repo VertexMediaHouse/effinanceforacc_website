@@ -63,7 +63,7 @@ export default function AboutCompany() {
           {/* Right Content */}
           <div>
             <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-accent">
-              About{" "} Effinance For Acc  
+              About{" "} Effinance For Acc
             </span>
 
             <h2 className="max-w-[650px] text-[52px] font-bold leading-[1.05] text-text-primary">
@@ -73,7 +73,7 @@ export default function AboutCompany() {
             </h2>
 
             <p className="mt-5 max-w-[650px] text-lg font-medium text-text-secondary">
-              Effinanceforacc Handles The Books So You Can Run The Business.<br/>
+              Effinanceforacc Handles The Books So You Can Run The Business.<br />
               Accurate, On Time, Every Single Month.
             </p>
 

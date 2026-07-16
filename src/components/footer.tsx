@@ -32,7 +32,7 @@ export default function Footer() {
                 <div className="mb-6 flex items-start gap-3 text-white/60">
                   <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <p className="text-md leading-7">
-                    B-812, Titanium City Center, near Income Tax Building, <br/>Satellite, Ahmedabad, Gujarat 380015
+                    B-812, Titanium City Center, near Income Tax Building, <br />Satellite, Ahmedabad, Gujarat 380015
                   </p>
                 </div>
 
