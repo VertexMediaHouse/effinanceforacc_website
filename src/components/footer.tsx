@@ -32,23 +32,21 @@ export default function Footer() {
                 <div className="mb-6 flex items-start gap-3 text-white/60">
                   <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <p className="text-md leading-7">
-                    Middlest 2 East 42nd Streearket
-                    <br />
-                    place New York, NY 10017
+                    B-812, Titanium City Center, near Income Tax Building, <br/>Satellite, Ahmedabad, Gujarat 380015
                   </p>
                 </div>
 
                 <div className="mb-4 flex items-center gap-3 text-white">
                   <Phone className="h-5 w-5 shrink-0 text-primary" />
                   <h4 className="text-lg font-bold">
-                    123(55)-90067990
+                    +91 9725946540
                   </h4>
                 </div>
 
                 <div className="flex items-center gap-3 text-white/60">
                   <Mail className="h-5 w-5 shrink-0 text-primary" />
                   <p className="text-md">
-                    info@example.com
+                    arpit@effinanceforacc.co
                   </p>
                 </div>
               </div>

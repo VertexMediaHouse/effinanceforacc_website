@@ -1,56 +1,108 @@
 import { useEffect, useRef } from "react";
 
 const industryProjects = [
-    {
-        number: "01",
-        image: "https://plus.unsplash.com/premium_photo-1661375173523-e53501f99674?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmluYW5jZSUyMGluJTIwSGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
-        title: "Healthcare Finance",
-        description:
-            "We modernized bookkeeping, payroll, and financial reporting for a growing healthcare practice, improving accuracy and operational efficiency.",
-        category: "Healthcare",
-        client: "Medical Practice",
-        date: "2025",
-    },
-    {
-        number: "02",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "eCommerce Growth",
-        description:
-            "Our accounting team streamlined inventory reconciliation, sales tax reporting, and cash flow management for a fast-growing online retailer.",
-        category: "eCommerce",
-        client: "Retail Brand",
-        date: "2025",
-    },
-    {
-        number: "03",
-        image: "https://images.unsplash.com/photo-1732812608429-67bd0ff463ae?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Real Estate",
-        description:
-            "We delivered accurate financial reporting and cash flow planning, helping a real estate firm make smarter investment decisions.",
-        category: "Real Estate",
-        client: "Property Group",
-        date: "2025",
-    },
-    {
-        number: "04",
-        image: "https://plus.unsplash.com/premium_photo-1663100163323-bcc8b597ce4b?q=80&w=1521&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Manufacturing",
-        description:
-            "We simplified payroll, compliance, and financial reporting, allowing the business to reduce errors and improve operational control.",
-        category: "Manufacturing",
-        client: "Industrial Company",
-        date: "2025",
-    },
-    {
-        number: "05",
-        image: "https://plus.unsplash.com/premium_photo-1661290329923-4791c3f43dba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZSUyMGluJTIwc3RhcnR1cHxlbnwwfHwwfHx8MA%3D%3D",
-        title: "Startup Success",
-        description:
-            "Our financial planning and investor-ready reporting helped a startup strengthen its financial foundation and prepare for growth.",
-        category: "Technology",
-        client: "SaaS Startup",
-        date: "2025",
-    },
+  {
+    number: "01",
+    image:
+      "https://images.unsplash.com/photo-1732812608429-67bd0ff463ae?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Real Estate",
+    description:
+      "Key QuickBooks accounting practices for property management, rental income, asset tracking, and financial reporting.",
+    category: "Real Estate",
+    client: "Industry Best Practices",
+    date: "2023",
+    points: [
+      "Set up Class/Location tracking for every property to monitor profitability.",
+      "Maintain separate liability accounts for security deposits and escrow funds.",
+      "Track fixed assets, renovations, and depreciation accurately.",
+      "Reconcile rental income, CAM charges, and bank statements monthly.",
+    ],
+  },
+  {
+    number: "02",
+    image:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "E-Commerce",
+    description:
+      "Essential QuickBooks practices for online stores handling multiple sales channels and payment gateways.",
+    category: "E-Commerce",
+    client: "Industry Best Practices",
+    date: "2024",
+    points: [
+      "Integrate Shopify, Amazon, Etsy, and payment platforms with QuickBooks.",
+      "Track merchant fees and reconcile net deposits correctly.",
+      "Manage inventory and Cost of Goods Sold (COGS) accurately.",
+      "Handle multi-state sales tax obligations using QuickBooks Sales Tax.",
+    ],
+  },
+  {
+    number: "03",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661375173523-e53501f99674?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmluYW5jZSUyMGluJTIwSGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D",
+    title: "Healthcare",
+    description:
+      "Accounting best practices for healthcare providers using QuickBooks while maintaining compliance.",
+    category: "Healthcare",
+    client: "Industry Best Practices",
+    date: "2023",
+    points: [
+      "Keep patient billing data HIPAA compliant and securely managed.",
+      "Track insurance reimbursements and reconcile EOBs carefully.",
+      "Use Class/Location tracking for providers and departments.",
+      "Categorize licensing, malpractice insurance, and compliance costs correctly.",
+    ],
+  },
+  {
+    number: "04",
+    image:
+      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1470&auto=format&fit=crop",
+    title: "Chauffeur Services",
+    description:
+      "Financial management essentials for transportation businesses operating multiple vehicles and drivers.",
+    category: "Transportation",
+    client: "Industry Best Practices",
+    date: "2025",
+    points: [
+      "Track expenses separately for each vehicle using Class/Location.",
+      "Record employee wages, contractor payments, and commissions accurately.",
+      "Reconcile income from direct bookings and third-party platforms.",
+      "Monitor fuel, tolls, mileage, and vehicle tax deductions.",
+    ],
+  },
+  {
+    number: "05",
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop",
+    title: "Education",
+    description:
+      "QuickBooks accounting practices for educational institutions, grants, and tuition management.",
+    category: "Education",
+    client: "Industry Best Practices",
+    date: "2024",
+    points: [
+      "Track tuition, grants, donations, and government funding separately.",
+      "Manage restricted and unrestricted funds for compliance.",
+      "Record scholarships and fee waivers using dedicated accounts.",
+      "Set up recurring invoices and deferred revenue for installment tuition.",
+    ],
+  },
+  {
+    number: "06",
+    image:
+      "https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1470&auto=format&fit=crop",
+    title: "Landscaping",
+    description:
+      "Project-based accounting best practices for landscaping and maintenance businesses.",
+    category: "Landscaping",
+    client: "Industry Best Practices",
+    date: "2023",
+    points: [
+      "Track job costs by project or client using Projects/Class tracking.",
+      "Separate equipment, vehicle, fuel, and maintenance expenses.",
+      "Manage seasonal cash flow and recurring maintenance contracts.",
+      "Track materials, inventory, and subcontractor costs accurately.",
+    ],
+  },
 ];
 
 const STICKY_TOP = 96;
@@ -166,7 +218,7 @@ export default function IndustriesCaseStudies() {
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}
-              className="sticky top-24"
+              className="sticky top-16"
               style={{ zIndex: index + 1 }}
             >
               <div className="bg-white/70 backdrop-blur-2xl rounded-2xl overflow-hidden shadow-lg">
@@ -190,9 +242,18 @@ export default function IndustriesCaseStudies() {
                       {project.title}
                     </h3>
 
-                    <p className="text-[#6e7676] leading-8 mb-10">
+                    <p className="text-[#6e7676] leading-8 mb-8">
                       {project.description}
                     </p>
+
+                    <ul className="space-y-4 mb-10">
+                      {project.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="mt-2 h-2 w-2 rounded-full bg-[#eb862a] shrink-0" />
+                          <span className="text-[#6e7676] leading-7">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="space-y-4 mb-10 text-[15px]">
                       <div>

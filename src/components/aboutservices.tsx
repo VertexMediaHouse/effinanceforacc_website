@@ -11,33 +11,33 @@ import {
 const features = [
   {
     icon: ShieldCheck,
-    title: "Tax Compliance",
-    desc: "US federal and state tax filings prepared and reviewed for accuracy.",
-  },
-  {
-    icon: FileText,
-    title: "Bookkeeping",
-    desc: "Daily transaction recording and reconciliations kept fully up to date.",
+    title: "Accounting & Bookkeeping",
+    desc: "Professional outsourced bookkeeping and accounting services that streamline financial operations, reduce overhead costs, and ensure full compliance.",
   },
   {
     icon: BarChart3,
-    title: "Month-End Close",
-    desc: "Timely close cycles with CPA-ready financial statements every month.",
+    title: "Clean Up  Bookkeeping",
+    desc: "Correct misclassified transactions, remove duplicate entries, reconcile balances, and bring overdue financial records up to date for reporting and tax filing.",
   },
   {
     icon: Wallet,
-    title: "Accounts Payable",
-    desc: "Vendor bills tracked, approved and paid on a consistent schedule.",
+    title: "Virtual CFO Services",
+    desc: "Strategic financial planning including cash flow optimization, financial modeling, forecasting, budgeting, and proactive tax planning to support business growth.",
   },
   {
     icon: Landmark,
-    title: "Accounts Receivable",
-    desc: "Invoicing and collections managed to keep your cash flow steady.",
+    title: "Financial Statement Preparation",
+    desc: "Prepare customized financial statements for tax filing, bank loans, business valuation, mergers, acquisitions, and annual reporting requirements.",
   },
   {
     icon: Lock,
-    title: "Payroll Support",
-    desc: "Payroll processing and recordkeeping handled accurately each cycle.",
+    title: "Tax Preparation & Planning",
+    desc: "Comprehensive tax planning with entity structuring, retirement optimization, tax credit identification, and strategies to legally minimize tax liabilities.",
+  },
+  {
+    icon: BarChart3,
+    title: "Budgeting & Financial Forecasting",
+    desc: "Develop annual, quarterly, and monthly budgets, forecast revenue and cash flow, and improve working capital for informed business decisions.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function AboutServices() {
             return (
               <TiltedCard
                 key={item.title}
-                containerHeight="225px"
+                containerHeight="275px"
                 containerWidth="100%"
                 showMobileWarning={false}
                 showTooltip={false}
@@ -95,8 +95,8 @@ export default function AboutServices() {
                 overlayContent={
                   <div className="relative h-full w-full overflow-hidden rounded-[24px] border border-[#ece6f3] bg-white p-8 shadow-[0_10px_35px_rgba(20,20,43,0.08)] transition-all duration-300 group-hover:border-[#cd753a]/30 group-hover:shadow-[0_20px_50px_rgba(20,20,43,0.12)] pointer-events-auto">
                     {/* CONTENT */}
-                    <div className="relative z-10">
-                      <div className="mb-4 flex items-center justify-between">
+<div className="relative z-10 flex h-full flex-col">
+                        <div className="mb-4 flex items-center justify-between">
                         <h3 className="text-lg font-bold text-[#2a2456] transition-colors duration-300 group-hover:text-white">
                           {item.title}
                         </h3>
@@ -106,11 +106,11 @@ export default function AboutServices() {
                         </div>
                       </div>
 
-                      <p className="text-[14px] leading-6 text-[#5e5675] transition-colors duration-300 group-hover:text-white/80">
-                        {item.desc}
-                      </p>
+ <p className="flex-1 text-[14px] leading-6 text-[#5e5675] transition-colors duration-300 group-hover:text-white/80">
+  {item.desc}
+</p>
 
-                      <div className="mt-6">
+<div className="mt-6 pt-4">
                         <button
                           className="group/btn inline-flex items-center gap-3 text-sm font-semibold text-[#cd753a] transition-all duration-300 hover:text-[#b95d20]"
                         >

@@ -81,22 +81,24 @@ export default function HomeHero() {
                     {/* LEFT CONTENT — FIXED CENTERING */}
                     <div className="flex-1 max-w-[540px] flex flex-col justify-center">
 
-                        <div className="text-[#8a4726] text-xs font-bold tracking-[0.15em] uppercase mb-4">
-                            EXCLUSIVE FINANCE APPS
-                        </div>
+                        <span className="mb-4 pl-2 block text-[14px] font-bold uppercase tracking-[2px] text-[#885b67]">
+                            <span className="bg-gradient-to-r from-[#884c76] via-[#a35765] to-[#f38c24] bg-clip-text text-transparent">
+                                EffinanceForAcc
+                            </span>
+                        </span>
 
                         <h1 className="text-[40px] md:text-[48px] lg:text-[52px] leading-[1.15] font-extrabold text-[#1f1f1f] mb-4">
                             Transform
-<span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="#ffffffff"
-                                    strokeWidth="2"
-                                >
-                                    <path d="M5 12h14M15 5l7 7-7 7" />
-                                </svg>
+                            <span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">                                <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#ffffffff"
+                                strokeWidth="2"
+                            >
+                                <path d="M5 12h14M15 5l7 7-7 7" />
+                            </svg>
                             </span>
                             Your <br />
                             Business With Expert <br />

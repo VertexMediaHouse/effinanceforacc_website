@@ -90,8 +90,9 @@ export default function Navbar() {
 
             {/* CTA */}
             <Link
-              to="#"
+              to="https://calendar.zoho.in/zc/view/slot-booking/zz080212300905139a87ab803df20436f4911d04ceefa3183adefcd4f09ec9eb27daea5d3ef62d3881c9b57945d21e4ebe4197d04e"
               className="group flex items-center gap-3 rounded-md border border-[#392f83] py-2 pl-6 pr-2 text-[15px] font-semibold text-[#392f83] transition-all hover:bg-[#392f83] hover:text-white"
+              target="_blank"
             >
               Free Consultation
 

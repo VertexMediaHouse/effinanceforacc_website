@@ -3,24 +3,28 @@ import { Quote } from "lucide-react";
 export default function Testimonial() {
     const testimonials = [
         {
-            name: "Alva Edison",
-            role: "Market Researcher",
-            image: "https://i.pravatar.cc/80?img=12",
+            name: "Lateshia",
+            role: "Atlanta, USA",
+            review:
+                "It has been a pleasure working with Effinance Foracc. From the initial meeting to date, it has been an outstanding experience. Arpit is very patient, professional, and knowledgeable. I highly recommend him and his team for all your accounting and bookkeeping needs.",
         },
         {
-            name: "Kristin Watson",
-            role: "WordPress Developer",
-            image: "https://i.pravatar.cc/80?img=32",
+            name: "Michael",
+            role: "Accounting Firm",
+            review:
+                "We've had an excellent experience working with the Effinance team. The quality of the bookkeeping has been consistently accurate, the staff is responsive and easy to work with, and they've always been receptive to feedback and process improvements.",
         },
         {
-            name: "Jacob Jones",
-            role: "Web Designer",
-            image: "https://i.pravatar.cc/80?img=15",
+            name: "Sai",
+            role: "Texas, USA",
+            review:
+                "I've been working with Arpit for both my business and personal accounting needs, and his support has been exceptional. Beyond accurate bookkeeping, he provides valuable guidance on debt reduction and financial planning. His professionalism, honesty, and responsiveness make him someone I highly recommend.",
         },
         {
-            name: "Merry Jiucy",
-            role: "UI Designer",
-            image: "https://i.pravatar.cc/80?img=68",
+            name: "Dr. Yudi",
+            role: "Texas, USA",
+            review:
+                "Working with Mr. Arpit Shah has been an incredible experience. He has completely taken the stress out of my finances. His expertise, attention to detail, and professionalism ensure everything is handled accurately and in my best interest. He is truly a valuable partner for financial peace of mind.",
         },
     ];
 
@@ -31,19 +35,21 @@ export default function Testimonial() {
                     {/* Left Content */}
                     <div className="flex flex-col justify-center">
                         <span className="mb-4 text-xs font-bold uppercase tracking-[2px] text-[#885b67]">
-                            Our Testimonials
+                            Client Testimonials
                         </span>
 
                         <h2 className="mb-5 text-[44px] font-bold leading-[1.1] text-[#1a1630]">
-                            Don't Believe Us?
+                            Trusted by Businesses
                             <br />
-                            People Talk About It
+                            Across the United States
                         </h2>
 
                         <p className="mb-8 max-w-sm text-[15px] leading-7 text-[#6b6480]">
-                            Discover a moving experience like no other. At Transp
-                            Offering Transit, Cost And Manual Tracking On Driver
-                            Stay Worrying Over Own Ipsum.
+                            Our clients trust Effinance Foracc for reliable
+                            bookkeeping, accounting, tax support, and financial
+                            guidance. Their success stories reflect our
+                            commitment to accuracy, professionalism, and
+                            long-term partnerships.
                         </p>
 
                         <button
@@ -53,7 +59,7 @@ export default function Testimonial() {
                                     "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
                             }}
                         >
-                            Check Our Reviews
+                            Read Client Reviews
                             <svg
                                 width="16"
                                 height="16"
@@ -74,21 +80,7 @@ export default function Testimonial() {
                         {testimonials.map((item, index) => (
                             <div
                                 key={index}
-                                className="
-    group
-    relative
-    overflow-hidden
-    rounded-2xl
-    border border-[#f1e8df]
-    bg-white
-    p-7
-    shadow-[0_10px_30px_rgba(0,0,0,0.05),0_2px_8px_rgba(205,117,58,0.05)]
-    transition-all
-    duration-300
-    hover:-translate-y-1
-    hover:border-[#e9d7c9]
-    hover:shadow-[0_20px_50px_rgba(0,0,0,0.08),0_6px_18px_rgba(205,117,58,0.08)]
-  "
+                                className="group relative overflow-hidden rounded-2xl border border-[#f1e8df] bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.05),0_2px_8px_rgba(205,117,58,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#e9d7c9] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08),0_6px_18px_rgba(205,117,58,0.08)]"
                             >
                                 {/* Stars */}
                                 <div className="mb-5 flex gap-1">
@@ -103,19 +95,16 @@ export default function Testimonial() {
                                     ))}
                                 </div>
 
-                                {/* Text */}
+                                {/* Review */}
                                 <p className="mb-6 text-[14px] leading-7 text-[#6b6480]">
-                                    "Discover a moving experience like no other and
-                                    provide accurate solutions beyond merely clicking."
+                                    "{item.review}"
                                 </p>
 
                                 {/* User */}
                                 <div className="flex items-center gap-3">
-                                    <img
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="h-12 w-12 rounded-full object-cover ring-2 ring-[#f0e6dd]"
-                                    />
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#884c76] to-[#f38c24] text-lg font-bold text-white">
+                                        {item.name.charAt(0)}
+                                    </div>
 
                                     <div>
                                         <h4 className="text-lg font-bold text-[#1a1630]">
@@ -128,7 +117,7 @@ export default function Testimonial() {
                                     </div>
                                 </div>
 
-                                {/* Large Quote */}
+                                {/* Quote Icon */}
                                 <Quote
                                     fill="#f0e6dd"
                                     stroke="#f0e6dd"

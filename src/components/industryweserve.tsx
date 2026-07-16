@@ -1,36 +1,33 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function IndustryWeServe() {
-  const projects = [
-    {
-      category: "E-Commerce & Retail",
-      title: "Bookkeeping & inventory accounting for online sellers",
-      image:
-        "/assets/industry-1.jpg", // replace via Mangific
-      imageKeyword: "ecommerce warehouse accounting online business",
-    },
-    {
-      category: "IT & SaaS",
-      title: "Financial reporting for tech and software companies",
-      image:
-        "/assets/industry-2.jpg",
-      imageKeyword: "software team office finance meeting",
-    },
-    {
-      category: "Startups & Small Business",
-      title: "Scalable accounting support for growing businesses",
-      image:
-        "/assets/industry-3.png",
-      imageKeyword: "startup founders discussing growth strategy",
-    },
-    {
-      category: "US & Offshore Clients",
-      title: "Cross-border tax and compliance solutions",
-      image:
-        "/assets/industry-4.jpg",
-      imageKeyword: "international business finance global consulting",
-    },
-  ];
+const projects = [
+  {
+    category: "Real Estate",
+    title: "Property-level bookkeeping with class & location tracking",
+    image: "/assets/industry-1.jpg",
+    imageKeyword: "commercial real estate office property management",
+  },
+  {
+    category: "E-Commerce",
+    title: "Multi-channel accounting with inventory & sales tax management",
+    image: "/assets/industry-2.jpg",
+    imageKeyword: "ecommerce warehouse online retail fulfillment",
+  },
+  {
+    category: "Healthcare",
+    title: "HIPAA-conscious financial management & insurance reconciliation",
+    image: "/assets/industry-3.jpg",
+    imageKeyword: "modern healthcare clinic medical administration",
+  },
+  {
+    category: "Chauffeur Services",
+    title: "Vehicle expense tracking & driver payment management",
+    image: "/assets/industry-4.jpg",
+    imageKeyword: "luxury chauffeur service executive transportation",
+  }
+];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -130,13 +127,15 @@ export default function IndustryWeServe() {
                 key={activeIndex}
                 src={projects[activeIndex].image}
                 alt={projects[activeIndex].title}
-                className="h-[500px] w-full rounded-xl object-cover transition-all duration-500"
+                className="h-[550px] w-full rounded-xl object-cover transition-all duration-500"
               />
 
               <div className="absolute bottom-4 left-4 right-4">
-                <button className="w-full rounded-md bg-[#cd753a] py-4 text-sm font-semibold text-white transition hover:bg-[#b8662f]">
-                  See More Details
-                </button>
+                <Link to="/industries#case-studies">
+                  <button className="w-full rounded-md bg-[#cd753a] py-4 text-sm font-semibold text-white transition hover:bg-[#b8662f]">
+                    See More Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

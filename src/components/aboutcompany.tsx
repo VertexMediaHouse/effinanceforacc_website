@@ -21,7 +21,7 @@ export default function AboutCompany() {
     },
     {
       icon: ShieldCheck,
-      title: "Bank-grade data security",
+      title: "Multi-Factor Authentication",
     },
   ];
 
@@ -63,10 +63,7 @@ export default function AboutCompany() {
           {/* Right Content */}
           <div>
             <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-accent">
-              About{" "}
-              <span className="bg-gradient-to-r from-[#884c76] via-[#a35765] to-[#f38c24] bg-clip-text text-transparent">
-                Effinance For Acc
-              </span>
+              About{" "} Effinance For Acc  
             </span>
 
             <h2 className="max-w-[650px] text-[52px] font-bold leading-[1.05] text-text-primary">
