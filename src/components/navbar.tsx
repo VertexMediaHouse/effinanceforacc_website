@@ -24,12 +24,12 @@ export default function Navbar() {
               className="flex items-center gap-2 text-base font-medium text-white"
             >
               <Phone className="h-5 w-5" strokeWidth={2} />
-              <span>Call: +123-7767-8889</span>
+              <span>Call: +91 9725946540</span>
             </a>
 
             <span className="hidden items-center gap-2 text-base sm:flex pl-4">
               <Mail className="h-5 w-5" strokeWidth={2} />
-              <span>Mail: info@gmail.com</span>
+              <span>Mail: arpit@effinanceforacc.co</span>
             </span>
           </div>
 

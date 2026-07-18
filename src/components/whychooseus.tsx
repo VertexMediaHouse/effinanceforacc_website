@@ -44,23 +44,25 @@ export default function WhyChooseUs() {
 
   return (
     <section className="overflow-hidden bg-white py-24" id="WhyChooseUs">
-      <div className="mx-auto max-w-[1400px] px-6">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-4">
         {/* Header */}
-        <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">
+        <div className="mb-10 lg:mb-14 grid gap-6 lg:gap-10 lg:grid-cols-[700px_1fr] items-end">
           <div>
             <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
               Why Choose Us
             </span>
 
-            <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
-              Financial Solutions <br /> That Help Your Business Grow
+            <h2 className="max-w-[700px] text-3xl sm:text-4xl lg:text-[42px] font-bold leading-tight lg:leading-[1.08] text-[#1a1630]">
+              Financial Solutions
+              <br className="hidden sm:block" />
+              That Help Your Business Grow
             </h2>
           </div>
 
-          <div className="flex items-end lg:justify-end">
-            <p className="max-w-[420px] text-[20px] leading-7 text-[#6b6480]">
-              Reliable bookkeeping, accurate reporting, and dedicated financial support
-              for US businesses and accounting firms.
+          <div className="lg:flex lg:justify-end">
+            <p className="max-w-[460px] text-[15px] sm:text-[17px] lg:text-[20px] leading-7 text-[#6b6480]">
+              Reliable bookkeeping, accurate reporting, and dedicated financial
+              support for US businesses and accounting firms.
             </p>
           </div>
         </div>

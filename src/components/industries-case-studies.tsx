@@ -222,13 +222,13 @@ export default function IndustriesCaseStudies() {
               style={{ zIndex: index + 1 }}
             >
               <div className="bg-white/70 backdrop-blur-2xl rounded-2xl overflow-hidden shadow-lg">
-                <div className="grid lg:grid-cols-[68%_32%]">
+                <div className="grid grid-cols-1 lg:grid-cols-[68%_32%]">
 
                   <div className="relative">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[640px] object-cover"
+                      className="w-full h-56 sm:h-72 md:h-96 lg:h-[640px] object-cover"
                     />
 
                     <div className="absolute top-5 left-5 w-[42px] h-[42px] rounded-lg bg-[#eb862a] text-white text-sm font-bold flex items-center justify-center">
@@ -236,17 +236,17 @@ export default function IndustriesCaseStudies() {
                     </div>
                   </div>
 
-                  <div className="px-14 py-16 flex flex-col justify-center">
+                  <div className="px-5 py-6 sm:px-8 sm:py-8 lg:px-14 lg:py-16 flex flex-col justify-center">
 
-                    <h3 className="text-[38px] leading-[1.2] font-bold text-[#041b16] mb-6">
+                    <h3 className="text-2xl sm:text-3xl lg:text-[38px] leading-tight font-bold text-[#041b16] mb-4 lg:mb-6">
                       {project.title}
                     </h3>
 
-                    <p className="text-[#6e7676] leading-8 mb-8">
+                    <p className="text-[15px] text-[#6e7676] leading-7 mb-6 lg:mb-8">
                       {project.description}
                     </p>
 
-                    <ul className="space-y-4 mb-10">
+                    <ul className="space-y-2 sm:space-y-3 lg:space-y-4 mb-6 sm:mb-8 lg:mb-10">
                       {project.points.map((point, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <span className="mt-2 h-2 w-2 rounded-full bg-[#eb862a] shrink-0" />

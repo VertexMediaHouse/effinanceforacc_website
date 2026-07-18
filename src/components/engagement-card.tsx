@@ -1,116 +1,139 @@
 export default function EngagementCard() {
-    const engagements = [
-        {
-            number: "01",
-            title: "Monthly Accounting",
-            subheader: "Ongoing financial support",
-            description:
-                "Comprehensive monthly accounting services designed to keep your books accurate, your finances organized, and your business compliant year-round.",
-            points: [
-                "Bookkeeping & reconciliations",
-                "Payroll & financial reporting",
-                "Dedicated accounting support",
-            ],
-        },
-        {
-            number: "02",
-            title: "Project Services",
-            subheader: "One-time accounting projects",
-            description:
-                "Need help with a specific financial task? We deliver expert support for cleanup projects, tax preparation, system setup, and financial consulting.",
-            points: [
-                "Bookkeeping cleanup",
-                "Tax planning & compliance",
-                "Financial consulting",
-            ],
-        },
-    ];
+  const engagements = [
+    {
+      number: "01",
+      title: "Monthly Accounting",
+      subheader: "Ongoing financial support",
+      description:
+        "Comprehensive monthly accounting services designed to keep your books accurate, your finances organized, and your business compliant year-round.",
+      points: [
+        "Bookkeeping & reconciliations",
+        "Payroll & financial reporting",
+        "Dedicated accounting support",
+      ],
+    },
+    {
+      number: "02",
+      title: "Project Services",
+      subheader: "One-time accounting projects",
+      description:
+        "Need help with a specific financial task? We deliver expert support for cleanup projects, tax preparation, system setup, and financial consulting.",
+      points: [
+        "Bookkeeping cleanup",
+        "Tax planning & compliance",
+        "Financial consulting",
+      ],
+    },
+  ];
 
-    return (
-        <section className="py-24 bg-[#f7f1eb]">
-            <div className="max-w-[1280px] mx-20 px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="mb-12 px-8">
-                        <span className="mb-3 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
-                            SERVICE PLANS
-                        </span>
+  return (
+    <section className="bg-[#f7f1eb] py-14 sm:py-16 lg:py-24">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12">
+        {/* Header */}
+        <div className="mb-10 lg:mb-14 grid gap-6 lg:gap-10 lg:grid-cols-[700px_1fr] items-end">
+          <div>
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+              SERVICE PLANS
+            </span>
 
-                        <h2 className="max-w-[660px] text-[36px] font-bold leading-[1.1] text-[#1a1630]">
-                            Choose Your
-                            <br />
-                            Service Plan
-                        </h2>
-                    </div>
-                    <div className="mb-12 px-8 flex items-end">
-                        <p className="mt-5 max-w-[520px] text-[18px] leading-7 text-[#6b6480]">
-                            Flexible accounting services designed to match your business needs and growth goals.
-                        </p>
-                    </div>
-                </div>
+            <h2 className="max-w-[700px] text-3xl sm:text-4xl lg:text-[42px] font-bold leading-tight lg:leading-[1.08] text-[#1a1630]">
+              Choose Your
+              <br className="hidden sm:block" />
+              Service Plan
+            </h2>
+          </div>
 
-                <div className="grid md:grid-cols-2 gap-8 px-8">
-                    {engagements.map((item, index) => (
-                        <div
-                            key={index}
-                            className="relative bg-white/70 backdrop-blur-2xl rounded-2xl shadow-lg overflow-hidden flex flex-col p-10 min-h-[460px]"
-                        >
-                            <div
-                                className="absolute top-0 left-0 w-full h-1"
-                                style={{
-                                    background:
-                                        "linear-gradient(90deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
-                                }}
-                            />
+          <div className="lg:flex lg:justify-end">
+            <p className="max-w-[460px] text-[15px] sm:text-[17px] lg:text-[20px] leading-7 text-[#6b6480]">
+              Flexible accounting services designed to match your business
+              needs, budget, and long-term growth goals.
+            </p>
+          </div>
+        </div>
 
-                            <div className="w-[38px] h-[38px] rounded-lg bg-[#eb862a] text-white text-sm font-bold flex items-center justify-center mb-6">
-                                {item.number}
-                            </div>
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {engagements.map((item, index) => (
+            <div
+              key={index}
+              className="group relative flex flex-col rounded-2xl border border-[#ece7e3] bg-white p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              {/* Top Gradient */}
+              <div
+                className="absolute left-0 top-0 h-1 w-full rounded-t-2xl"
+                style={{
+                  background:
+                    "linear-gradient(90deg,#884c76 0%,#a35765 50%,#f38c24 100%)",
+                }}
+              />
 
-                            <h3 className="text-[28px] leading-[1.15] font-bold text-[#041b16] mb-2">
-                                {item.title}
-                            </h3>
+              {/* Number */}
+              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-[#eb862a] text-sm font-bold text-white">
+                {item.number}
+              </div>
 
-                            <p className="text-[13px] font-semibold uppercase tracking-[1px] text-[#885b67] mb-5">
-                                {item.subheader}
-                            </p>
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-[#041b16]">
+                {item.title}
+              </h3>
 
-                            <p className="text-[15px] text-[#6e7676] leading-7 mb-8">
-                                {item.description}
-                            </p>
+              {/* Subtitle */}
+              <p className="mt-3 text-xs font-bold uppercase tracking-[2px] text-[#885b67]">
+                {item.subheader}
+              </p>
 
-                            <ul className="space-y-3 mb-10">
-                                {item.points.map((point, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-start gap-3 text-[14px] text-[#1a1630]"
-                                    >
-                                        <span
-                                            className="mt-[6px] w-[5px] h-[5px] rounded-full flex-shrink-0"
-                                            style={{
-                                                background:
-                                                    "linear-gradient(135deg, #884c76 0%, #f38c24 100%)",
-                                            }}
-                                        />
-                                        {point}
-                                    </li>
-                                ))}
-                            </ul>
+              {/* Description */}
+              <p className="mt-5 text-[15px] leading-7 text-[#6e7676]">
+                {item.description}
+              </p>
 
-                            <button
-                                className="mt-auto max-w-fit text-white px-6 py-3 rounded-md font-bold text-[14px] flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
-                                }}
-                            >
-                                Get Started
-                            </button>
+              {/* Features */}
+              <ul className="mt-8 space-y-4">
+                {item.points.map((point, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[15px] leading-7 text-[#1a1630]"
+                  >
+                    <span
+                      className="mt-[10px] h-2 w-2 flex-shrink-0 rounded-full"
+                      style={{
+                        background:
+                          "linear-gradient(135deg,#884c76 0%,#f38c24 100%)",
+                      }}
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
 
-                        </div>
-                    ))}
-                </div>
+              {/* CTA */}
+              <button
+                className="mt-8 inline-flex w-fit items-center gap-3 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg,#884c76 0%,#a35765 50%,#f38c24 100%)",
+                }}
+              >
+                Get Started
 
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  className="h-4 w-4"
+                >
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
-        </section >
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
