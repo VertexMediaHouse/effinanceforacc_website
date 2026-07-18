@@ -8,11 +8,11 @@ export default function Marquee() {
   ];
 
   return (
-    <section className="border-t border-black/5 py-10 overflow-hidden max-w-[1400px] mx-20 px-6 lg:px-12">
-      <div className="flex items-center">
-        {/* LEFT COLUMN - 50% */}
-        <div className="w-1/2 flex items-center gap-4">
-          <div className="w-12 h-12 bg-btn-dark rounded-full flex justify-center items-center text-white shadow-[0_0_0_4px_rgba(0,0,0,0.05)]">
+    <section className="border-t border-black/5 py-8 md:py-10 overflow-hidden max-w-[1400px] mx-auto px-5 md:px-8 lg:px-12">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+        {/* LEFT COLUMN */}
+        <div className="w-full md:w-1/2 flex items-center justify-center md:justify-start gap-4">
+          <div className="w-12 h-12 bg-btn-dark rounded-full flex justify-center items-center text-white shadow-[0_0_0_4px_rgba(0,0,0,0.05)] shrink-0">
             <svg
               width="24"
               height="24"
@@ -29,15 +29,15 @@ export default function Marquee() {
             </svg>
           </div>
 
-          <p className="text-sm text-secondary-text max-w-[220px] leading-[1.4]">
+          <p className="text-sm text-secondary-text leading-relaxed max-w-[240px] text-center md:text-left">
             Our application downloads reach to 10 thousand.
           </p>
         </div>
 
-        {/* RIGHT COLUMN - 50% */}
-        <div className="w-1/2 overflow-hidden relative">
+        {/* RIGHT COLUMN */}
+        <div className="w-full md:w-1/2 overflow-hidden relative">
           <div
-            className="flex items-center gap-16 w-max"
+            className="flex items-center gap-10 md:gap-16 w-max"
             style={{
               animation: "marquee3d 15s linear infinite",
               transformStyle: "preserve-3d",
@@ -54,15 +54,15 @@ export default function Marquee() {
                 <img
                   src={logo}
                   alt={`logo-${i}`}
-                  className="h-10 w-auto object-contain"
+                  className="h-8 md:h-10 w-auto object-contain"
                 />
               </div>
             ))}
           </div>
 
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 h-full w-10 md:w-20 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-10 md:w-20 bg-gradient-to-l from-white to-transparent pointer-events-none" />
         </div>
       </div>
 

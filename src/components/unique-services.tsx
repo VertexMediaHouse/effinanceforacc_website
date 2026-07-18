@@ -119,29 +119,28 @@ export default function UniqueServices() {
   }, []);
 
   return (
-    <section className="bg-orange-50/40 py-24 relative" ref={containerRef}>
-      <div className="max-w-[1400px] mx-24 px-6">
+    <section className="bg-orange-50/40 py-14 md:py-20 lg:py-24 relative" ref={containerRef}>
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12">
 
-        <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end">
-          <div>
-            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
-              What We Do
-            </span>
-            <h2 className="max-w-[720px] text-[42px] font-bold leading-[1.08] text-[#1a1630]">
-              Comprehensive Accounting & Financial Solutions
-            </h2>
-          </div>
-          <p className="mt-4 max-w-[600px] text-base leading-7 text-[#6b6480]">
+        <div className="mb-10 lg:mb-14 grid gap-6 lg:gap-10 lg:grid-cols-[720px_1fr] items-end">          <div>
+          <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+            What We Do
+          </span>
+          <h2 className="max-w-[720px] text-2xl sm:text-3xl sm:text-4xl lg:text-[42px] font-bold leading-tight lg:leading-[1.08] text-[#1a1630]">
+            Comprehensive Accounting & Financial Solutions
+          </h2>
+        </div>
+          <p className="max-w-[600px] text-sm sm:text-base leading-7 text-[#6b6480]">
             Effinanceforacc delivers end-to-end accounting and financial
             support for US-based and international businesses alike.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 relative">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 relative">
 
           {/* Sticky Left Visual Container */}
           <div className="hidden lg:block lg:w-1/2 relative">
-            <div className="sticky top-[120px] h-[460px] w-full rounded-2xl overflow-hidden shadow-xl border border-orange-100 bg-white transition-all duration-700">
+            <div className="sticky top-24 h-[500px] xl:h-[560px] w-full rounded-2xl overflow-hidden shadow-xl border border-orange-100 bg-white transition-all duration-700">
 
               {servicesData.map((service, index) => {
                 const Icon = service.icon;
@@ -168,7 +167,7 @@ export default function UniqueServices() {
                       >
                         <Icon size={28} className="text-white" />
                       </div>
-                      <h3 className="text-white text-3xl font-bold mb-4 leading-tight">
+                      <h3 className="text-white text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                         {service.title}
                       </h3>
                       <div className="flex gap-2 items-center">
@@ -195,14 +194,13 @@ export default function UniqueServices() {
                 <div
                   key={service.id}
                   data-index={index}
-                  className={`service-section py-24 px-4 lg:px-8 rounded-2xl transition-all duration-500 flex flex-col justify-center origin-top ${isActive
+                  className={`service-section py-12 sm:py-16 lg:py-24 px-5 sm:px-6 lg:px-8rounded-2xl transition-all duration-500 flex flex-col justify-center origin-top ${isActive
                     ? 'opacity-100 bg-white shadow-xl shadow-orange-900/5 scale-[1.01] border border-orange-100/50'
                     : 'opacity-40 lg:opacity-30 scale-100'
                     }`}
                 >
                   {/* Mobile-only visual layout */}
-                  <div className="lg:hidden w-full h-[240px] rounded-2xl overflow-hidden mb-6 relative">
-                    <img src={service.image} className="w-full h-full object-cover" alt="" />
+                  <div className="lg:hidden w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-6 relative">                    <img src={service.image} className="w-full h-full object-cover" alt="" />
                     <div className="absolute inset-0 bg-black/40"></div>
                     <div
                       className="absolute bottom-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center shadow-md"
@@ -212,11 +210,11 @@ export default function UniqueServices() {
                     </div>
                   </div>
 
-                  <span className={`text-5xl font-black mb-4 block font-mono transition-colors duration-300 ${isActive ? 'text-[#f38c24]/20' : 'text-slate-900/5'}`}>
+                  <span className={`text-4xl sm:text-5xl font-black mb-4 block font-mono transition-colors duration-300 ${isActive ? 'text-[#f38c24]/20' : 'text-slate-900/5'}`}>
                     0{index + 1}
                   </span>
 
-                  <h3 className="text-3xl font-bold text-slate-900 mb-5 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                     {service.title}
                   </h3>
 
@@ -230,12 +228,12 @@ export default function UniqueServices() {
                     </p>
                   )}
 
-                  <ul className="flex flex-col gap-2 max-w-xl">
+                  <ul className="flex flex-col gap-3 max-w-xl">
                     {service.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-2.5">
                         <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-orange-500 to-amber-400"></span>
-                        <span className="text-sm text-slate-700 leading-snug">
-                          <span className="font-semibold text-slate-900">{bullet.label}:</span>{" "}
+<span className="text-[15px] sm:text-sm text-slate-700 leading-7">
+                            <span className="font-semibold text-slate-900">{bullet.label}:</span>{" "}
                           {bullet.detail}
                         </span>
                       </li>

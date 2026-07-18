@@ -8,7 +8,7 @@ export default function Footer() {
       {/* Background circles — same as original */}
       <div className="relative">
         {/* Footer Card — only color changed from bg-[#885b67] to bg-[#1a1630] */}
-        <div className="bg-[#1a1630] rounded-t-[30px] px-32 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+        <div className="bg-[#1a1630] rounded-t-[30px] px-6 sm:px-12 lg:px-32 py-12 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[40%_60%]">
             {/* Left - Contact */}
             <div>

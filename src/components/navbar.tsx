@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="w-full font-sans text-[13px]">
       {/* Top utility bar */}
       <div className="bg-[#1a1630] text-white">
-        <div className="mx-6 flex h-16 max-w-8xl xl:pl-24 items-center justify-between px-6 lg:px-20">
+        <div className="mx-auto flex h-16 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-20 xl:pl-24">
           <div className="flex items-center gap-4 divide-x divide-white/40">
             <a
               href="tel:+12377678889"
@@ -54,7 +54,7 @@ export default function Navbar() {
       </div>
 
       <div className="bg-white">
-        <div className="mx-20 flex h-20 max-w-8xl items-center justify-between px-6 lg:px-8">
+        <div className="mx-auto flex h-20 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
