@@ -1,7 +1,9 @@
-import type { Handler } from '@netlify/functions';
-import fs from 'fs';
-import path from 'path';
 import { OpenAI } from 'openai';
+
+interface Env {
+  OPENAI_API_KEY: string;
+  ASSETS: { fetch: typeof fetch };
+}
 
 interface Chunk {
   heading: string;
@@ -39,17 +41,20 @@ async function embed(openai: OpenAI, text: string): Promise<number[]> {
   return res.data[0].embedding;
 }
 
-async function getChunks(openai: OpenAI): Promise<Chunk[]> {
+async function getChunks(openai: OpenAI, request: Request, env: Env): Promise<Chunk[]> {
   if (cachedChunks) return cachedChunks;
   if (cacheError) throw new Error(cacheError);
 
-  // Bundled knowledge base file — included at deploy time via included_files (see netlify.toml).
-  const kbPath = path.resolve(__dirname, 'knowledgebase.md');
-  if (!fs.existsSync(kbPath)) {
-    cacheError = `Knowledge base file not found at ${kbPath}`;
+  // public/knowledgebase.md is served as a static asset by Pages — fetch it
+  // through the ASSETS binding rather than the filesystem.
+  const assetUrl = new URL('/knowledgebase.md', request.url);
+  const assetRes = await env.ASSETS.fetch(new Request(assetUrl.toString()));
+  if (!assetRes.ok) {
+    cacheError = `Knowledge base file not found at ${assetUrl.pathname}`;
     throw new Error(cacheError);
   }
-  const raw = fs.readFileSync(kbPath, 'utf-8');
+
+  const raw = await assetRes.text();
   const sections = splitByHeaders(raw);
 
   const chunks: Chunk[] = [];
@@ -61,31 +66,38 @@ async function getChunks(openai: OpenAI): Promise<Chunk[]> {
   return chunks;
 }
 
-export const handler: Handler = async (event: { httpMethod: string; body: any; }) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
-  }
+function json(data: unknown, status = 200): Response {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  });
+}
 
-  const apiKey = process.env.OPENAI_API_KEY;
+// functions/chat.ts -> POST /chat  (Pages Functions routes by filename + HTTP method,
+// so there's no need to manually check event.httpMethod).
+export const onRequestPost: PagesFunction<Env> = async (context) => {
+  const { request, env } = context;
+
+  const apiKey = env.OPENAI_API_KEY;
   if (!apiKey) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'OPENAI_API_KEY is not configured on Netlify' }) };
+    return json({ error: 'OPENAI_API_KEY is not configured on Cloudflare' }, 500);
   }
 
   let userMessage: string | undefined;
   try {
-    const body = JSON.parse(event.body || '{}');
+    const body = (await request.json()) as { message?: string };
     userMessage = body.message?.trim();
   } catch {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON body' }) };
+    return json({ error: 'Invalid JSON body' }, 400);
   }
   if (!userMessage) {
-    return { statusCode: 400, body: JSON.stringify({ error: 'Message is required' }) };
+    return json({ error: 'Message is required' }, 400);
   }
 
   const openai = new OpenAI({ apiKey });
 
   try {
-    const chunks = await getChunks(openai);
+    const chunks = await getChunks(openai, request, env);
     const queryEmbedding = await embed(openai, userMessage);
     const scored = chunks
       .map((c) => ({ ...c, score: cosineSimilarity(queryEmbedding, c.embedding) }))
@@ -112,16 +124,16 @@ ${contextText}`;
     });
 
     const reply = completion.choices[0]?.message?.content?.trim() || '';
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reply }),
-    };
+    return json({ reply });
   } catch (err) {
     console.error('Chat function error:', err);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: err instanceof Error ? err.message : 'LLM request failed' }),
-    };
+    return json(
+      { error: err instanceof Error ? err.message : 'LLM request failed' },
+      500
+    );
   }
 };
+
+// Optional: friendly response for GET/other methods hitting /chat.
+export const onRequestGet: PagesFunction<Env> = async () =>
+  json({ error: 'Method not allowed' }, 405);

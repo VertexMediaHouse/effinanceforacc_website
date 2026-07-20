@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, type CSSProperties, type JSX } from 'react';
 import { MessageSquare, X, RotateCcw } from 'lucide-react';
+import { OpenAI } from 'openai';
 
 interface Message {
     role: 'user' | 'assistant';
@@ -11,11 +12,36 @@ interface Position {
     y: number;
 }
 
-// Point this at your local server for now.
-// When you deploy to Netlify, change this to '/.netlify/functions/chat'.
-const CHAT_ENDPOINT = import.meta.env.DEV
-    ? 'http://localhost:4000/chat'
-    : '/chat';
+// --- OpenAI (called directly from the browser) -----------------------------
+// NOTE: this exposes your key in the client bundle. Fine for local dev / a
+// prototype / an internal tool. For a public production site, move this back
+// to a server. The key comes from a .env file: VITE_OPENAI_API_KEY=sk-...
+const openai = new OpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true,
+});
+
+// --- Knowledge base ---------------------------------------------------------
+// The whole file is small enough to drop straight into the system prompt, so
+// there's no embedding / vector search needed. Loaded once, then cached.
+let kbCache: string | null = null;
+async function loadKnowledgeBase(): Promise<string> {
+    if (kbCache) return kbCache;
+    const res = await fetch('/knowledgebase.md'); // served from public/
+    if (!res.ok) throw new Error('Could not load knowledgebase.md');
+    kbCache = await res.text();
+    return kbCache;
+}
+
+function buildSystemPrompt(kb: string): string {
+    return `You are the official website assistant for Effinance Foracc LLP, an accounting outsourcing firm.
+Answer ONLY using the context below. If the answer isn't in the context, say you're not certain and offer to connect the visitor with the team via email (arpit.shah@effinanceforacc.com) or phone (+91 97259 46540).
+NEVER state specific pricing or fees — offer a consultation instead.
+If the user asks for a quote, consultation, or callback, end your reply with the exact marker [[LEAD_FORM]].
+
+Context:
+${kb}`;
+}
 
 function renderMessageContent(content: string): JSX.Element {
     const lines = content.split('\n');
@@ -187,7 +213,7 @@ const Chatbot: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
-    const [position, setPosition] = useState<Position>({ x: 24, y: 24 }); // now means: distance from right/bottom  
+    const [position, setPosition] = useState<Position>({ x: 24, y: 24 }); // distance from right/bottom
     const size = { width: 380, height: 560 };
 
     const dragStart = useRef<{ x: number; y: number } | null>(null);
@@ -219,21 +245,23 @@ const Chatbot: React.FC = () => {
     const sendMessage = async () => {
         if (!inputValue.trim() || isTyping) return;
         const userMsg: Message = { role: 'user', content: inputValue.trim() };
-        setMessages((prev) => [...prev, userMsg]);
+        const nextMessages = [...messages, userMsg];
+        setMessages(nextMessages);
         setInputValue('');
         setIsTyping(true);
         try {
-            const response = await fetch(CHAT_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: userMsg.content }),
+            const kb = await loadKnowledgeBase();
+            const completion = await openai.chat.completions.create({
+                model: 'gpt-4o-mini',
+                temperature: 0.2,
+                messages: [
+                    { role: 'system', content: buildSystemPrompt(kb) },
+                    // send prior turns too, so the bot remembers the conversation
+                    ...nextMessages.map((m) => ({ role: m.role, content: m.content })),
+                ],
             });
-            if (!response.ok) {
-                const txt = await response.text();
-                throw new Error(`Server ${response.status}: ${txt}`);
-            }
-            const data = await response.json();
-            const cleanReply = (data.reply || '').replace('[[LEAD_FORM]]', '').trim();
+            const raw = completion.choices[0]?.message?.content?.trim() || '';
+            const cleanReply = raw.replace('[[LEAD_FORM]]', '').trim();
             setMessages((prev) => [...prev, { role: 'assistant', content: cleanReply }]);
         } catch (err) {
             console.error('Chat error:', err);
@@ -267,7 +295,7 @@ const Chatbot: React.FC = () => {
                         right: position.x,
                         bottom: position.y,
                         width: size.width,
-                        height: Math.min(size.height, window.innerHeight - 48), // 48px margin top/bottom
+                        height: Math.min(size.height, window.innerHeight - 48),
                         maxHeight: '85vh',
                     }}
                 >
