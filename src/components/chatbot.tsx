@@ -14,9 +14,9 @@ interface Position {
 // Point this at your local server for now.
 // When you deploy to Netlify, change this to '/.netlify/functions/chat'.
 const CHAT_ENDPOINT = import.meta.env.DEV
-  ? 'http://localhost:4000/chat'
-  : '/.netlify/functions/chat';
-  
+    ? 'http://localhost:4000/chat'
+    : '/chat';
+
 function renderMessageContent(content: string): JSX.Element {
     const lines = content.split('\n');
     const elements: JSX.Element[] = [];
