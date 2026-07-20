@@ -38,16 +38,20 @@ export default function Footer() {
 
                 <div className="mb-4 flex items-center gap-3 text-white">
                   <Phone className="h-5 w-5 shrink-0 text-primary" />
-                  <h4 className="text-lg font-bold">
-                    +91 9725946540
-                  </h4>
+                  <a href="tel:+919725946540">
+                    <h4 className="text-lg font-bold">
+                      +91 9725946540
+                    </h4>
+                  </a>
                 </div>
 
-                <div className="flex items-center gap-3 text-white/60">
+                <div className="flex items-center gap-3 text-white">
                   <Mail className="h-5 w-5 shrink-0 text-primary" />
-                  <p className="text-md">
-                    arpit@effinanceforacc.co
-                  </p>
+                  <a href="mailto:arpit@effinanceforacc.co">
+                    <p className="text-lg font-bold">
+                      arpit@effinanceforacc.co
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>

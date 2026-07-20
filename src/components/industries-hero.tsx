@@ -86,7 +86,7 @@ export default function IndustriesHero() {
                         </div>
 
                         <h1 className="text-[40px] md:text-[48px] lg:text-[52px] leading-[1.15] font-extrabold text-[#1f1f1f] mb-4">
-                            Accounting Solutions <br/>
+                            Accounting Solutions<br/>
                             {/* <span className="inline-flex items-center justify-center border border-white/20 rounded-full w-16 h-[42px] mx-2 bg-gradient-to-r from-[#884c76] to-[#f38c24] backdrop-blur-sm shadow-md align-middle">
                                 <svg
                                     width="20"
@@ -113,7 +113,9 @@ export default function IndustriesHero() {
                                     "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
                             }}
                         >
-                            Explore Industries
+                            <a href="#Case-studies">
+                                 Explore Industries
+                            </a>
                         </button>
                     </div>
 
@@ -167,22 +169,6 @@ export default function IndustriesHero() {
                                 <path d="M145 130c5-5 12-15 20-10" strokeWidth="1.5" opacity="0.5" />
                             </svg>
                         </div>
-
-                        {/* IMAGE KEYWORDS FOR MAGNIFIC
-                        
-                        - diverse business professionals meeting
-                        - accountant consulting business owner
-                        - financial consultant with clients
-                        - corporate accounting office
-                        - finance strategy meeting
-                        - business consulting team
-                        - professional office discussion
-                        - accounting advisory services
-                        - entrepreneur meeting accountant
-                        - modern financial consulting firm
-                        
-                        */}
-
                         <div className="relative w-full h-full flex items-end justify-center">
                             <img
                                 src="assets/homehero.png"

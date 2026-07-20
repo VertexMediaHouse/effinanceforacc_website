@@ -4,6 +4,7 @@ import {
   FileText,
   ShieldCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function AboutCompany() {
   const features = [
@@ -118,7 +119,9 @@ export default function AboutCompany() {
                   "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
               }}
             >
-              Schedule A Consultation
+              <Link to="https://calendar.zoho.in/zc/view/slot-booking/zz080212300905139a87ab803df20436f4911d04ceefa3183adefcd4f09ec9eb27daea5d3ef62d3881c9b57945d21e4ebe4197d04e" target="_blank">
+                Schedule A Consultation
+              </Link>
               <svg
                 width="18"
                 height="18"

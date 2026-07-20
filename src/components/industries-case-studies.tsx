@@ -186,7 +186,7 @@ export default function IndustriesCaseStudies() {
   }, []);
 
   return (
-    <section className="py-[110px] bg-[#f7f1eb]" id="#Case-studies">
+    <section className="py-[110px] bg-[#f7f1eb]" id="Case-studies">
       <div className="max-w-[1364px] mx-auto px-6">
 
         <div className="mb-14 grid gap-10 lg:grid-cols-[720px_1fr] items-end px-10">

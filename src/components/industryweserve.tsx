@@ -55,6 +55,7 @@ const projects = [
             </p>
           </div>
 
+          <Link to="/industries">
           <button
             className="text-white px-6 py-3 rounded-md font-bold text-[15px] flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#a35765]/30"
             style={{
@@ -62,7 +63,7 @@ const projects = [
                 "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
             }}
           >
-            Explore Our Services
+            Explore Our Industries
             <svg
               width="18"
               height="18"
@@ -76,6 +77,7 @@ const projects = [
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </button>
+              </Link>
         </div>
 
         {/* Content */}

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function EngagementCard() {
   const engagements = [
     {
@@ -107,29 +109,33 @@ export default function EngagementCard() {
               </ul>
 
               {/* CTA */}
-              <button
-                className="mt-8 inline-flex w-fit items-center gap-3 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg,#884c76 0%,#a35765 50%,#f38c24 100%)",
-                }}
-              >
-                Get Started
-
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  className="h-4 w-4"
+              <Link
+                to="https://calendar.zoho.in/zc/view/slot-booking/zz080212300905139a87ab803df20436f4911d04ceefa3183adefcd4f09ec9eb27daea5d3ef62d3881c9b57945d21e4ebe4197d04e">
+                <button
+                  className="mt-8 inline-flex w-fit items-center gap-3 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  style={{
+                    background:
+                      "linear-gradient(135deg,#884c76 0%,#a35765 50%,#f38c24 100%)",
+                  }}
                 >
-                  <path
-                    d="M5 12h14M12 5l7 7-7 7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+
+                  Get Started
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      d="M5 12h14M12 5l7 7-7 7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </Link>
             </div>
           ))}
         </div>

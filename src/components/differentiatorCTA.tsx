@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function DifferentiatorCTA(){
   return (
     <section 
@@ -28,13 +30,13 @@ export default function DifferentiatorCTA(){
 
         {/* Right Side: CTA Button */}
         <div className="flex-shrink-0 mx-2">
-          <a
-            href="#get-started"
+          <Link 
+              to="https://calendar.zoho.in/zc/view/slot-booking/zz080212300905139a87ab803df20436f4911d04ceefa3183adefcd4f09ec9eb27daea5d3ef62d3881c9b57945d21e4ebe4197d04e"
             className="inline-flex items-center gap-2 bg-white hover:bg-orange-50 text-[#a35765] font-bold px-7 py-4 rounded-xl shadow-lg transition-all duration-200 hover:scale-[1.02]"
           >
             Get Started Today
             <span className="text-xl leading-none">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

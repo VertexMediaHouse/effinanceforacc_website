@@ -113,7 +113,9 @@ export default function HomeHero() {
                   "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
               }}
             >
-              View Our Services
+              <a href="#services">
+                View Our Services
+              </a>
             </button>
           </div>
 

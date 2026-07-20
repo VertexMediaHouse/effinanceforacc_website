@@ -119,17 +119,18 @@ export default function UniqueServices() {
   }, []);
 
   return (
-    <section className="bg-orange-50/40 py-14 md:py-20 lg:py-24 relative" ref={containerRef}>
+    <section className="bg-orange-50/40 py-14 md:py-20 lg:py-24 relative" ref={containerRef} id="services">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12">
 
-        <div className="mb-10 lg:mb-14 grid gap-6 lg:gap-10 lg:grid-cols-[720px_1fr] items-end">          <div>
-          <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
-            What We Do
-          </span>
-          <h2 className="max-w-[720px] text-2xl sm:text-3xl sm:text-4xl lg:text-[42px] font-bold leading-tight lg:leading-[1.08] text-[#1a1630]">
-            Comprehensive Accounting & Financial Solutions
-          </h2>
-        </div>
+        <div className="mb-10 lg:mb-14 grid gap-6 lg:gap-10 lg:grid-cols-[720px_1fr] items-end">
+          <div>
+            <span className="mb-4 block text-[11px] font-bold uppercase tracking-[2px] text-[#885b67]">
+              What We Do
+            </span>
+            <h2 className="max-w-[720px] text-2xl sm:text-3xl sm:text-4xl lg:text-[42px] font-bold leading-tight lg:leading-[1.08] text-[#1a1630]">
+              Comprehensive Accounting & Financial Solutions
+            </h2>
+          </div>
           <p className="max-w-[600px] text-sm sm:text-base leading-7 text-[#6b6480]">
             Effinanceforacc delivers end-to-end accounting and financial
             support for US-based and international businesses alike.
@@ -232,8 +233,8 @@ export default function UniqueServices() {
                     {service.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-2.5">
                         <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-orange-500 to-amber-400"></span>
-<span className="text-[15px] sm:text-sm text-slate-700 leading-7">
-                            <span className="font-semibold text-slate-900">{bullet.label}:</span>{" "}
+                        <span className="text-[15px] sm:text-sm text-slate-700 leading-7">
+                          <span className="font-semibold text-slate-900">{bullet.label}:</span>{" "}
                           {bullet.detail}
                         </span>
                       </li>

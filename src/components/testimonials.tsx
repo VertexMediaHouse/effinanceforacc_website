@@ -51,28 +51,6 @@ export default function Testimonial() {
                             commitment to accuracy, professionalism, and
                             long-term partnerships.
                         </p>
-
-                        <button
-                            className="text-white w-fit py-3 px-6 rounded-md font-bold text-[15px] flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#a35765]/30"
-                            style={{
-                                background:
-                                    "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
-                            }}
-                        >
-                            Read Client Reviews
-                            <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </button>
                     </div>
 
                     {/* Right Grid */}

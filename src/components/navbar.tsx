@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram, FaMap } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NAV_ITEMS = [
@@ -20,34 +20,36 @@ export default function Navbar() {
         <div className="mx-auto flex h-16 w-full max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-20 xl:pl-24">
           <div className="flex items-center gap-4 divide-x divide-white/40">
             <a
-              href="tel:+12377678889"
+              href="tel:+919725946540"
               className="flex items-center gap-2 text-base font-medium text-white"
             >
               <Phone className="h-5 w-5" strokeWidth={2} />
               <span>Call: +91 9725946540</span>
             </a>
 
-            <span className="hidden items-center gap-2 text-base sm:flex pl-4">
+            <a
+              href="mailto:arpit@effinanceforacc.co"
+              className="hidden items-center gap-2 text-base sm:flex pl-4">
               <Mail className="h-5 w-5" strokeWidth={2} />
               <span>Mail: arpit@effinanceforacc.co</span>
-            </span>
+            </a>
           </div>
 
           <div className="hidden md:flex items-center divide-x divide-white/40">
-            <a href="#" aria-label="Facebook" className="px-3 transition-colors hover:text-white/80">
+            <a href="https://www.facebook.com/share/1H3Rvsi2Xr/" aria-label="Facebook" className="px-3 transition-colors hover:text-white/80">
               <FaFacebook className="h-5 w-5" />
             </a>
 
-            <a href="#" aria-label="Twitter" className="px-3 transition-colors hover:text-white/80">
-              <FaTwitter className="h-5 w-5" />
-            </a>
-
-            <a href="#" aria-label="LinkedIn" className="px-3 transition-colors hover:text-white/80">
+            <a href="https://linkedin.com/in/arpit-shah-us-cpa-licensed-montana-14883a1b1" aria-label="LinkedIn" className="px-3 transition-colors hover:text-white/80">
               <FaLinkedin className="h-5 w-5" />
             </a>
 
-            <a href="#" aria-label="Instagram" className="px-3 transition-colors hover:text-white/80">
+            <a href="https://www.instagram.com/effinanceforacc?igsh=MjJtZHE4ZjJ0cHVu" aria-label="Instagram" className="px-3 transition-colors hover:text-white/80">
               <FaInstagram className="h-5 w-5" />
+            </a>
+
+            <a href="https://maps.app.goo.gl/bgxDwoJ7hD6d7JjH9" aria-label="Twitter" className="px-3 transition-colors hover:text-white/80">
+              <FaMap className="h-5 w-5" />
             </a>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function EngagementModelHero() {
     return (
         <div className="relative min-h-[810px] lg:min-h-[640px] overflow-hidden bg-[#c97a3d]/5 flex items-center">
@@ -114,7 +116,9 @@ export default function EngagementModelHero() {
                                     "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
                             }}
                         >
+                            <Link to="/services">
                             Take Our Services
+                            </Link>
                         </button>
                     </div>
 
