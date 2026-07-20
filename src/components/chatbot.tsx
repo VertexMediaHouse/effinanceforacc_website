@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect, type CSSProperties, type JSX } from 'react';
 import { MessageSquare, X, RotateCcw } from 'lucide-react';
-import { OpenAI } from 'openai';
-
 interface Message {
     role: 'user' | 'assistant';
     content: string;
@@ -16,33 +14,9 @@ interface Position {
 // NOTE: this exposes your key in the client bundle. Fine for local dev / a
 // prototype / an internal tool. For a public production site, move this back
 // to a server. The key comes from a .env file: VITE_OPENAI_API_KEY=sk-...
-const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true,
-});
-
 // --- Knowledge base ---------------------------------------------------------
 // The whole file is small enough to drop straight into the system prompt, so
 // there's no embedding / vector search needed. Loaded once, then cached.
-let kbCache: string | null = null;
-async function loadKnowledgeBase(): Promise<string> {
-    if (kbCache) return kbCache;
-    const res = await fetch('/knowledgebase.md'); // served from public/
-    if (!res.ok) throw new Error('Could not load knowledgebase.md');
-    kbCache = await res.text();
-    return kbCache;
-}
-
-function buildSystemPrompt(kb: string): string {
-    return `You are the official website assistant for Effinance Foracc LLP, an accounting outsourcing firm.
-Answer ONLY using the context below. If the answer isn't in the context, say you're not certain and offer to connect the visitor with the team via email (arpit.shah@effinanceforacc.com) or phone (+91 97259 46540).
-NEVER state specific pricing or fees — offer a consultation instead.
-If the user asks for a quote, consultation, or callback, end your reply with the exact marker [[LEAD_FORM]].
-
-Context:
-${kb}`;
-}
-
 function renderMessageContent(content: string): JSX.Element {
     const lines = content.split('\n');
     const elements: JSX.Element[] = [];
@@ -250,18 +224,14 @@ const Chatbot: React.FC = () => {
         setInputValue('');
         setIsTyping(true);
         try {
-            const kb = await loadKnowledgeBase();
-            const completion = await openai.chat.completions.create({
-                model: 'gpt-4o-mini',
-                temperature: 0.2,
-                messages: [
-                    { role: 'system', content: buildSystemPrompt(kb) },
-                    // send prior turns too, so the bot remembers the conversation
-                    ...nextMessages.map((m) => ({ role: m.role, content: m.content })),
-                ],
+            const res = await fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: nextMessages }),
             });
-            const raw = completion.choices[0]?.message?.content?.trim() || '';
-            const cleanReply = raw.replace('[[LEAD_FORM]]', '').trim();
+            if (!res.ok) throw new Error(`Server ${res.status}`);
+            const data = await res.json();
+            const cleanReply = (data.reply || '').replace('[[LEAD_FORM]]', '').trim();
             setMessages((prev) => [...prev, { role: 'assistant', content: cleanReply }]);
         } catch (err) {
             console.error('Chat error:', err);
