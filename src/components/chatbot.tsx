@@ -14,6 +14,7 @@ export default function Chatbot() {
     const [showLead, setShowLead] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
+    const BRAND_GRADIENT = "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)";
 
     useEffect(() => {
         if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -69,11 +70,11 @@ export default function Chatbot() {
             {open && (
                 <div className="absolute bottom-[68px] right-0 flex h-[560px] max-h-[calc(100vh-108px)] w-[380px] max-w-[calc(100vw-32px)] flex-col overflow-hidden rounded-2xl bg-white shadow-[0_18px_50px_rgba(11,46,42,0.28)]">
                     {/* Header */}
-                    <header className="flex items-center justify-between border-b-2 border-[#c9a24b] bg-[#0b2e2a] px-4 py-3.5 text-white">
+                    <header className="flex items-center justify-between px-4 py-3.5 text-white" style={{ background: BRAND_GRADIENT, }}>
                         <div className="flex items-center gap-3">
-                            <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-[#c9a24b] text-sm font-bold text-[#0b2e2a]">
-                                EF
-                            </span>
+                            <img src="/assets/logo.png" className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-[#fff]  text-sm font-bold text-[#0b2e2a]">
+
+                            </img>
                             <div>
                                 <p className="text-[15px] font-semibold leading-tight">Effinance Foracc</p>
                                 <p className="text-xs text-white/70">Accounting &amp; tax outsourcing</p>
@@ -85,16 +86,23 @@ export default function Chatbot() {
                     </header>
 
                     {/* Messages */}
-                    <div ref={scrollRef} className="flex flex-1 flex-col gap-2.5 overflow-y-auto bg-[#f5f3ec] p-4">
+                    <div ref={scrollRef} className="flex flex-1 flex-col gap-2.5 overflow-y-auto p-4"
+                        style={{
+                            background:
+                                "linear-gradient(to bottom,#fff7f5 0%,#fffdf9 45%,#ffffff 100%)",
+                        }}>
                         {messages.map((m, i) => (
                             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                                 <div
                                     className={`max-w-[82%] whitespace-pre-wrap break-words rounded-2xl px-3.5 py-2.5 ${m.role === "user"
-                                        ? "rounded-br-[4px] bg-[#0b2e2a] text-white"
-                                        : "rounded-bl-[4px] bg-[#eef1ee] text-[#16211f]"
+                                        ? "rounded-br-[4px] "
+                                        : "rounded-bl-[4px] "
                                         }`}
+                                    style={{ background: m.role === "user" ? BRAND_GRADIENT : "#eef1ee" }}
                                 >
-                                    {m.content || (sending ? <TypingDots /> : "")}
+                                    <span className={m.role === "user" ? "text-white" : "text-[#16211f]"}>
+                                        {m.content || (sending ? <TypingDots /> : "")}
+                                    </span>
                                 </div>
                             </div>
                         ))}
@@ -106,7 +114,7 @@ export default function Chatbot() {
                         <div className="border-t border-[#e3e6e2] bg-white px-3 pb-3 pt-2">
                             <button
                                 onClick={() => setShowLead(true)}
-                                className="px-0.5 pb-2 pt-1 text-[13px] font-semibold text-[#a9862f] hover:underline"
+                                className="px-0.5 pb-2 pt-1 text-[13px] font-semibold text-[#a35765] hover:underline"
                             >
                                 Share your details
                             </button>
@@ -130,8 +138,10 @@ export default function Chatbot() {
                                     type="submit"
                                     disabled={sending || !input.trim()}
                                     aria-label="Send"
-                                    className="h-10 w-10 flex-none rounded-xl bg-[#0b2e2a] text-xl text-white hover:bg-[#123f39] disabled:opacity-40"
-                                >
+                                    className="h-10 w-10 rounded-xl text-xl text-white shadow-md transition hover:scale-105 disabled:opacity-40"
+                                    style={{
+                                        background: BRAND_GRADIENT,
+                                    }}                                >
                                     ↑
                                 </button>
                             </form>
@@ -143,8 +153,11 @@ export default function Chatbot() {
             <button
                 onClick={() => setOpen((o) => !o)}
                 aria-label={open ? "Minimize chat" : "Open chat"}
-                className={`inline-flex h-[52px] items-center justify-center rounded-full bg-[#0b2e2a] font-semibold text-white shadow-[0_8px_24px_rgba(11,46,42,0.28)] transition hover:-translate-y-px hover:bg-[#123f39] ${open ? "w-[52px] text-2xl" : "gap-2 px-6 text-[15px]"
-                    }`}
+                className={`inline-flex h-[54px] items-center justify-center rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]
+                 ${open ? "w-[54px] text-2xl" : "gap-2 px-6 text-[15px]"}`}
+                style={{
+                    background: BRAND_GRADIENT,
+                }}
             >
                 {open ? "×" : "Chat with us"}
             </button>
@@ -172,6 +185,8 @@ function LeadForm({ onClose }: { onClose: () => void }) {
     const [note, setNote] = useState("");
     const [state, setState] = useState<"idle" | "sending" | "done">("idle");
     const [error, setError] = useState("");
+    const BRAND_GRADIENT = "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)";
+
 
     async function submit(e: React.FormEvent) {
         e.preventDefault();
@@ -224,7 +239,8 @@ function LeadForm({ onClose }: { onClose: () => void }) {
             <button
                 type="submit"
                 disabled={state === "sending"}
-                className="rounded-[10px] bg-[#c9a24b] py-2.5 font-bold text-[#0b2e2a] hover:bg-[#a9862f] hover:text-white disabled:opacity-60"
+                className="rounded-[10px] py-2.5 font-bold text-white transition hover:scale-[1.02]"
+            style={{ background: BRAND_GRADIENT, }}
             >
                 {state === "sending" ? "Sending…" : "Request a callback"}
             </button>
