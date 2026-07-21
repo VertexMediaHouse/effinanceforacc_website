@@ -129,5 +129,16 @@ ${contextText}`;
   }
 });
 
+app.post('/lead', (req, res) => {
+  const { name, email, note } = req.body ?? {};
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email ?? '')) {
+    return res.status(400).json({ error: 'Name and valid email required.' });
+  }
+  const lead = { name, email, note: note ?? '', ts: new Date().toISOString() };
+  fs.appendFileSync(path.resolve(__dirname, 'leads.jsonl'), JSON.stringify(lead) + '\n');
+  console.log('New lead:', lead);
+  res.json({ ok: true });
+});
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Chat server listening on http://localhost:${PORT}`));
