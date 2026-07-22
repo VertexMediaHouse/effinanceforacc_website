@@ -15,7 +15,7 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: "Clean Up  Bookkeeping",
+    title: "Clean Up  Financial Records",
     desc: "Correct misclassified transactions, remove duplicate entries, reconcile balances, and bring overdue financial records up to date for reporting and tax filing.",
   },
   {
