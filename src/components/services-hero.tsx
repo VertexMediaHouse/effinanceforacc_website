@@ -90,7 +90,7 @@ export default function HomeHero() {
             <h1 className="text-[40px] md:text-[48px] lg:text-[51px] leading-[1.15] font-extrabold text-[#1f1f1f] mb-4">
               We Provide <br></br>Best Serives<br/>
             <TextType
-              text={["Bookkeeping", "Tax Preparation", "Payroll Management", "Financial Reporting", "Audit Support"]}
+              text={["Accounting and bookkeeping", "Clean Up Financial Records", "Virtual CFO Services", "Financial Statement Preparation", "Tax Preparation & Planning", "Budgeting & Financial Forecasting"]}
               typingSpeed={80}
               pauseDuration={800}
               showCursor
@@ -121,6 +121,53 @@ export default function HomeHero() {
 
           {/* RIGHT CONTENT — FIXED IMAGE + DOODLES */}
           <div className="flex-[1.1] relative h-[600px] flex items-center justify-center">
+             {/* DOODLE 1 */}
+                        <div className="absolute left-[-20px] top-10 w-40 h-40 opacity-60 hidden md:block animate-float-1">
+                            <svg viewBox="0 0 240 240" fill="none" stroke="#5a6e79" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M20 40l-8-12M38 22V8M14 62H2" opacity="0.6" strokeWidth="1.5" />
+                                <g transform="rotate(-5 60 120)">
+                                    <path d="M30 70v16c0 8 18 14 40 14s40-6 40-14V70" />
+                                    <path d="M30 86v16c0 8 18 14 40 14s40-6 40-14V86" />
+                                    <path d="M30 102v16c0 8 18 14 40 14s40-6 40-14v-16" />
+                                    <ellipse cx="70" cy="70" rx="40" ry="15" fill="#f7f1eb" fillOpacity="0.6" />
+                                    <ellipse cx="70" cy="70" rx="33" ry="12" strokeWidth="1" strokeDasharray="4 3" />
+                                </g>
+                                <g transform="translate(130,45) rotate(12)">
+                                    <circle cx="40" cy="40" r="34" fill="#f7f1eb" fillOpacity="0.7" strokeWidth="3" />
+                                    <text x="30" y="51" fontSize="34" fontFamily="serif" fontWeight="900" fill="#5a6e79">$</text>
+                                    <path d="M6 46a34 34 0 0 0 63 18" strokeWidth="1.5" />
+                                </g>
+                                <g transform="translate(110,115) rotate(15)">
+                                    <path d="M10 50v14c0 7 16 12 35 12s35-5 35-12V50" />
+                                    <ellipse cx="45" cy="50" rx="35" ry="13" fill="#f7f1eb" fillOpacity="0.5" />
+                                </g>
+                                <path d="M195 160c8 3 18 12 8 22" strokeWidth="1.5" opacity="0.6" />
+                            </svg>
+                        </div>
+
+                        {/* DOODLE 2 */}
+                        <div className="absolute right-[-10px] top-20 w-36 h-36 opacity-60 hidden md:block animate-float-2">
+                            <svg viewBox="0 0 200 200" fill="none" stroke="#5a6e79" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M25 25v120h130" strokeWidth="3" />
+                                <path d="M25 55h115M25 85h115M25 115h115" strokeDasharray="4 5" strokeWidth="1" opacity="0.4" />
+                                <g>
+                                    <rect x="40" y="65" width="22" height="80" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M40 65l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+                                    <path d="M62 65l10-8v80l-10 8Z" />
+                                </g>
+                                <g>
+                                    <rect x="78" y="85" width="22" height="60" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M78 85l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+                                    <path d="M100 85l10-8v60l-10 8Z" />
+                                </g>
+                                <g>
+                                    <rect x="116" y="105" width="22" height="40" fill="#f7f1eb" fillOpacity="0.5" />
+                                    <path d="M116 105l10-8h22l-10 8Z" fill="#e0d7ce" fillOpacity="0.5" />
+                                    <path d="M138 105l10-8v40l-10 8Z" />
+                                </g>
+                                <path d="M145 130c5-5 12-15 20-10" strokeWidth="1.5" opacity="0.5" />
+                            </svg>
+                        </div>
             {/* IMAGE — FIXED BOTTOM GAP */}
             <div className="relative w-full h-full flex items-end justify-center">
               <img

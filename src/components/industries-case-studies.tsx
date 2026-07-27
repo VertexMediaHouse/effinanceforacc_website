@@ -55,7 +55,7 @@ const industryProjects = [
   {
     number: "04",
     image:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1470&auto=format&fit=crop",
+    "/assets/chauffeur.png",
     title: "Chauffeur Services",
     description:
       "Financial management essentials for transportation businesses operating multiple vehicles and drivers.",
@@ -72,7 +72,7 @@ const industryProjects = [
   {
     number: "05",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop",
+      "/assets/education.png",
     title: "Education",
     description:
       "QuickBooks accounting practices for educational institutions, grants, and tuition management.",
@@ -89,7 +89,7 @@ const industryProjects = [
   {
     number: "06",
     image:
-      "https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1470&auto=format&fit=crop",
+      "/assets/landscape.png",
     title: "Landscaping",
     description:
       "Project-based accounting best practices for landscaping and maintenance businesses.",
@@ -277,24 +277,12 @@ export default function IndustriesCaseStudies() {
                         {project.category}
                       </div>
                     </div>
-
-                    <button
-                      className="max-w-fit text-white px-6 py-3 rounded-md font-bold text-[15px] flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #884c76 0%, #a35765 50%, #f38c24 100%)",
-                      }}
-                    >
-                      Read Case Study
-                    </button>
-
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

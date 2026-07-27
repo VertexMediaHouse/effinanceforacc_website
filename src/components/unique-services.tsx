@@ -4,7 +4,8 @@ import {
   FileSpreadsheet,
   Briefcase,
   FileSignature,
-  TrendingUp
+  TrendingUp,
+  BrushCleaning
 } from "lucide-react";
 
 const servicesData = [
@@ -26,18 +27,31 @@ const servicesData = [
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=600"
   },
   {
-    id: "statements",
-    title: "Financial Statement Preparation",
-    description: "Properly structured financial statements provide the foundation for smart decisions, compliance, and growth opportunities.",
-    sectionLabel: "Financial Statement Preparation",
+    id: "cleanup",
+    title: "Clean Up Financial Records",
+    description: "Restore accuracy and organization to your financial records by correcting errors, reconciling accounts, and bringing overdue books up to date.",
+    sectionLabel: "Financial Records Clean-Up Services",
     bullets: [
-      { label: "Tax Readiness", detail: "Properly formatted financial statements integrate seamlessly with your annual tax return preparation." },
-      { label: "Business Valuation", detail: "Structured financials are mandatory if you plan to sell, merge, or value your company." },
-      { label: "Custom Financials", detail: "We also prepare customized financials required for bank loan applications or yearly reporting requirements to bank." },
+      {
+        label: "Transaction Reclassification",
+        detail: "Correct misclassified income, expenses, assets, liabilities, and equity transactions."
+      },
+      {
+        label: "Duplicate & Error Correction",
+        detail: "Identify and remove duplicate entries, fix posting errors, and eliminate inconsistencies."
+      },
+      {
+        label: "Account Reconciliation",
+        detail: "Reconcile bank accounts, credit cards, loans, and other balance sheet accounts to ensure accuracy."
+      },
+      {
+        label: "Reporting & Tax Readiness",
+        detail: "Prepare clean, reconciled financial records that are ready for financial reporting, audits, and tax filing."
+      }
     ],
-    icon: FileSpreadsheet,
-    color: "#a35765",
-    image: "https://images.unsplash.com/photo-1579532582937-16c108930bf6?auto=format&fit=crop&q=80&w=600"
+    icon: BrushCleaning,
+    color: "#2f855a",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "cfo",
@@ -45,13 +59,53 @@ const servicesData = [
     description: "Get executive-level financial strategy without the full-time cost. Our virtual CFOs drive growth through data-driven leadership.",
     sectionLabel: "Virtual CFO Services",
     bullets: [
-      { label: "Financial Modeling & Forecasting", detail: "Building dynamic projections to predict cash flow runway, revenue targets, and scalability hurdles." },
-      { label: "Cash Flow Optimization", detail: "Implementing working capital management strategies to maximize liquidity and control burn rates." },
-      { label: "Tax Optimization Planning", detail: "Aligning corporate restructuring and investment decisions with proactive tax-minimisation strategies." },
+      {
+        label: "Financial Modeling & Forecasting",
+        detail: "Building dynamic projections to predict cash flow runway, revenue targets, and scalability hurdles."
+      },
+      {
+        label: "Cash Flow Optimization",
+        detail: "Implementing working capital management strategies to maximize liquidity and control burn rates."
+      },
+      {
+        label: "Tax Optimization Planning",
+        detail: "Aligning corporate restructuring and investment decisions with proactive tax-minimisation strategies."
+      },
+      {
+        label: "Budgeting & Strategic Planning",
+        detail: "Developing budgets, setting financial goals, and providing strategic insights to support sustainable business growth."
+      },
     ],
     icon: Briefcase,
     color: "#884c76",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    id: "statements",
+    title: "Financial Statement Preparation",
+    description: "Properly structured financial statements provide the foundation for smart decisions, compliance, and growth opportunities.",
+    sectionLabel: "Financial Statement Preparation",
+    bullets: [
+      {
+        label: "Tax Readiness",
+        detail: "Properly formatted financial statements integrate seamlessly with your annual tax return preparation."
+      },
+      {
+        label: "Business Valuation",
+        detail: "Structured financials are mandatory if you plan to sell, merge, or value your company."
+      },
+      {
+        label: "Custom Financials",
+        detail: "We also prepare customized financial statements for bank loan applications and annual reporting requirements."
+      },
+      {
+        label: "Management & Compliance Reporting",
+        detail: "Prepare accurate financial statements for management, investors, lenders, and regulatory compliance requirements."
+      },
+    ],
+    icon: FileSpreadsheet,
+    color: "#a35765",
+    image: "https://images.unsplash.com/photo-1579532582937-16c108930bf6?auto=format&fit=crop&q=80&w=600"
   },
   {
     id: "tax",
@@ -218,11 +272,6 @@ export default function UniqueServices() {
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-5 leading-tight">
                     {service.title}
                   </h3>
-
-                  {/* <p className="text-sm text-slate-500 leading-relaxed max-w-xl mb-4 italic">
-                    {service.description}
-                  </p> */}
-
                   {service.sectionLabel && (
                     <p className="text-xs font-bold uppercase tracking-widest text-[#e65c00] mb-3">
                       {service.sectionLabel}
@@ -240,28 +289,10 @@ export default function UniqueServices() {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="mt-8">
-                    <button className="flex items-center gap-4 font-bold text-base group text-slate-800">
-                      <span className={`border-b-2 pb-1 transition-colors duration-300 ${isActive ? 'border-[#f38c24]' : 'border-transparent group-hover:border-slate-400'}`}>
-                        Explore This Service
-                      </span>
-                      <div className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 ${isActive
-                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white border-transparent shadow-sm'
-                        : 'bg-white border-slate-200 group-hover:border-[#f38c24] text-slate-700'
-                        }`}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                          <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>
