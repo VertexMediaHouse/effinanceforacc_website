@@ -228,7 +228,7 @@ export default function UniqueServices() {
                       <div className="flex gap-2 items-center">
                         <div className="w-12 h-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full"></div>
                         <span className="text-white/80 font-mono tracking-widest text-sm">
-                          0{index + 1} / 05
+                          0{index + 1} / 06
                         </span>
                       </div>
                     </div>
@@ -248,6 +248,7 @@ export default function UniqueServices() {
               return (
                 <div
                   key={service.id}
+                  id={service.id}
                   data-index={index}
                   className={`service-section py-12 sm:py-16 lg:py-24 px-5 sm:px-6 lg:px-8rounded-2xl transition-all duration-500 flex flex-col justify-center origin-top ${isActive
                     ? 'opacity-100 bg-white shadow-xl shadow-orange-900/5 scale-[1.01] border border-orange-100/50'

@@ -1,28 +1,34 @@
 export default function ServicesBlog() {
   const blogs = [
     {
-      tag: "Bookkeeping",
-      title: "5 Signs Your Business Needs Professional Bookkeeping",
-      date: "January 12, 2025",
+      tag: "Accounting Software",
+      title: "Quicken Simplifi vs QuickBooks Online — Which Is Right for You?",
+      date: "June 12, 2025",
       image:
         "https://plus.unsplash.com/premium_photo-1678567671940-64eeefe22e5b?auto=format&fit=crop&q=80&w=600",
-      imageKeyword: "accountant bookkeeping records office desk",
+      description:
+        "Explore why Quicken Simplifi is a recommended accounting software for individuals and freelancers, and how it compares to QuickBooks Online.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7439683004970692609",
     },
     {
       tag: "Tax Planning",
-      title: "Year-End Tax Planning Tips for Small Businesses",
-      date: "February 05, 2025",
+      title: "IRS Unveils Higher Capital Gains Tax Brackets for 2026",
+      date: "November 06, 2025",
       image:
         "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=600",
-      imageKeyword: "tax planning documents calculator desk",
+      description:
+        "Stay ahead of the latest IRS updates on capital gains tax brackets for 2026 and learn what it means for your financial planning strategy.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7386229280470609920",
     },
     {
-      tag: "Financial Strategy",
-      title: "How Outsourced Accounting Helps Businesses Scale Faster",
-      date: "March 18, 2025",
+      tag: "Debt Management",
+      title: "How We Saved Our Client $19,300 With a One-Time Loan Payment",
+      date: "October 15, 2025",
       image:
         "https://plus.unsplash.com/premium_photo-1661326350444-8d0e57e4cdad?auto=format&fit=crop&q=80&w=600",
-      imageKeyword: "business growth financial strategy planning",
+      description:
+        "Discover how Effinanceforacc successfully arranged a one-time loan payment of $19,300 for a client — our mission is to help every individual become net debt-free.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7384088252154187794",
     },
   ];
 
@@ -110,19 +116,23 @@ export default function ServicesBlog() {
                       <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
                       <circle cx="12" cy="7" r="4" />
                     </svg>
-                    Admin
+                    Effinance Foracc
                   </span>
                 </div>
 
                 <p className="mt-5 text-[15px] leading-7 text-[#6b7280]">
-                  Stay up to date with expert insights on accounting best
-                  practices, tax strategies, and financial planning tips.
+                  {blog.description}
                 </p>
 
                 {/* CTA */}
-                <button className="mt-6 inline-flex items-center gap-3 font-semibold text-[#0d1b2a] group/btn">
+                <a
+                  href={blog.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-3 font-semibold text-[#0d1b2a] group/btn"
+                >
                   <span className="border-b border-transparent transition-all duration-300 group-hover/btn:border-[#e65c00]">
-                    Read Article
+                    Read on LinkedIn
                   </span>
 
                   <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7eb] transition-all duration-300 group-hover:bg-[#e65c00] group-hover:text-white group-hover:border-[#e65c00]">
@@ -140,7 +150,7 @@ export default function ServicesBlog() {
                       />
                     </svg>
                   </span>
-                </button>
+                </a>
               </div>
             </article>
           ))}

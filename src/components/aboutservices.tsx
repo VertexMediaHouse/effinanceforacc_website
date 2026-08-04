@@ -6,37 +6,44 @@ import {
   Landmark,
   Lock,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     icon: ShieldCheck,
     title: "Accounting & Bookkeeping",
     desc: "Professional outsourced bookkeeping and accounting services that streamline financial operations, reduce overhead costs, and ensure full compliance.",
+    link: "/services#accounting"
   },
   {
     icon: BarChart3,
     title: "Clean Up  Financial Records",
     desc: "Correct misclassified transactions, remove duplicate entries, reconcile balances, and bring overdue financial records up to date for reporting and tax filing.",
+    link: "/services#cleanup"
   },
   {
     icon: Wallet,
     title: "Virtual CFO Services",
     desc: "Strategic financial planning including cash flow optimization, financial modeling, forecasting, budgeting, and proactive tax planning to support business growth.",
+    link: "/services#cfo"
   },
   {
     icon: Landmark,
     title: "Financial Statement Preparation",
     desc: "Prepare customized financial statements for tax filing, bank loans, business valuation, mergers, acquisitions, and annual reporting requirements.",
+    link: "/services#statements"
   },
   {
     icon: Lock,
     title: "Tax Preparation & Planning",
     desc: "Comprehensive tax planning with entity structuring, retirement optimization, tax credit identification, and strategies to legally minimize tax liabilities.",
+    link: "/services#tax"
   },
   {
     icon: BarChart3,
     title: "Budgeting & Financial Forecasting",
     desc: "Develop annual, quarterly, and monthly budgets, forecast revenue and cash flow, and improve working capital for informed business decisions.",
+    link: "/services#budgeting"
   },
 ];
 
@@ -110,7 +117,8 @@ export default function AboutServices() {
                       </p>
 
                       <div className="mt-6 pt-4">
-                        <button
+                        <Link
+                          to={item.link}
                           className="group/btn inline-flex items-center gap-3 text-sm font-semibold text-[#cd753a] transition-all duration-300 hover:text-[#b95d20]"
                         >
                           Learn More
@@ -118,7 +126,7 @@ export default function AboutServices() {
                           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-current transition-all duration-300 group-hover/btn:bg-[#cd753a] group-hover/btn:text-white group-hover/btn:translate-x-1">
                             →
                           </span>
-                        </button>
+                        </Link>
                       </div>
                     </div>
 

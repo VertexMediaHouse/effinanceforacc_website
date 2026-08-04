@@ -97,10 +97,10 @@ const industryProjects = [
     client: "Industry Best Practices",
     date: "2023",
     points: [
-      "Track job costs by project or client using Projects/Class tracking.",
-      "Separate equipment, vehicle, fuel, and maintenance expenses.",
-      "Manage seasonal cash flow and recurring maintenance contracts.",
-      "Track materials, inventory, and subcontractor costs accurately.",
+      "Job Costing: Track direct expenses like field labor, fuel, plants, and dump fees per project to ensure profitability.",
+      "Seasonal Cash Flow: Build a 12-month cash forecast to save busy-season profits for slow winter months when expenses continue.",
+      "Equipment & Assets: Monitor vehicle and mower depreciation or use fast write-offs like Section 179 for new gear purchases.",
+      "Service-Specific Chart of Accounts: Separate income and costs by distinct lines such as maintenance, design, and hardscaping.",
     ],
   },
 ];
